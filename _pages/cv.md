@@ -24,7 +24,7 @@ Royal College, Colombo, Sri Lanka - GCE Advanced Level: z-score 2.83
 <h2 style="margin-top: 40px;"> Work Experience </h2>
 
 Jan 2019 - Jan 2020 <br>
-**Associate Data Scientist - SAKS, Colombo, Sri Lanka** 
+**Associate Data Scientist - VeracityAI, Colombo, Sri Lanka** 
 * Research on LIDAR based examining of buildings and structures for maintenance and insurance purposes
 * Developing computer vision component of vehicle damage estimation system for insurance purposes: product was
 developed beyond MVP stage with real-world testing
