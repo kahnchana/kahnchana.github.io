@@ -11,7 +11,7 @@ redirect_from:
 Award for the Most Outstanding Graduand of the Year (Valedictorian) from batch of
 over 2000 students at University of Moratuwa
 <p align="center">
-  <img src="https://kahnchana.github.io/images/images_awards/convocation.png" alt="Photo" style="width: 80%;"/> 
+  <img src="https://kahnchana.github.io/images/images_awards/convocation.jpg" alt="Photo" style="width: 80%;"/> 
 </p>
 
 <h3 style="margin-top: 40px;"> Dialog Axiata Hackathon 2020 </h3>
