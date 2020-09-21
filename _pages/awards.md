@@ -21,3 +21,9 @@ by Dialog and Axiata.
   <img src="https://kahnchana.github.io/images/images_awards/axiata-data-scientist.jpg" alt="Photo" style="width: 80%;"/> 
 </p>
 
+
+<h3 style="margin-top: 40px;"> International Mathematical Olympiad 2013 </h3>
+Represented Sri Lanka at the International Mathematical Olympiad in Santa Marta, Colombia. 
+<p align="center">
+  <img src="https://kahnchana.github.io/images/images_awards/imo.jpg" alt="Photo" style="width: 80%;"/> 
+</p>
