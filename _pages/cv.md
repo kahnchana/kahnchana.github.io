@@ -14,9 +14,9 @@ redirect_from:
 
 <h2 style="margin-top: 40px;"> Education </h2>
 
-**BSc (Hons), Electronics and Telecommunication Engineering** - CGPA: 3.92 <br>
-University of Moratuwa, Sri Lanka (Dean's List: Semester 1, 2, 3, 4, 6, 7, 8)
-
+**BSc (Hons), Electronics and Telecommunication Engineering** - CGPA: 3.95 <br>
+University of Moratuwa, Sri Lanka (Dean's List: Semester 1, 2, 3, 4, 6, 7, 8) <br>
+Most Outstanding Graduand of the Year (valedictorian) - 2020
 
 **Secondary Education** <br>
 Royal College, Colombo, Sri Lanka - GCE Advanced Level: z-score 2.83
