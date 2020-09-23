@@ -8,7 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-**"You can do anything, but not everything."**
+**"With great power, comes great responsibility."**
+<iframe width="966" height="543" src="https://www.youtube.com/embed/_m2dRDQEC1A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
 
 * I currently work at VeracityAI building better computer vision algorithms for 
 detecting parts and damages in vehicles in order to augment the insurance claims 
