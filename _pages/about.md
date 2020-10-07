@@ -8,20 +8,22 @@ redirect_from:
   - /about.html
 ---
 
-**"With great power, comes great responsibility."** <br>
 
 {% comment %} 
+**"With great power, comes great responsibility."** <br>
+
 Everyone believes that technology should be used for the betterment of the world, but the contrasting perceptions of 
 humans on what is good is the root to most problems.
-{% endcomment %}
 
 <iframe width="966" height="543" src="https://www.youtube.com/embed/_m2dRDQEC1A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 <br>
+
+{% endcomment %}
+
 
 * I currently work at VeracityAI building better computer vision algorithms for 
 detecting parts and damages in vehicles in order to augment the insurance claims 
-process. 
+process.  
 * I received my Bachelor’s Degree from [University of Moratuwa](https://uom.lk) in 
 2020, where I completed my thesis on Multi-Object Tracking and PGM based Panoptic 
 Segmentation under the supervision of [Dr. Ranga Rodrigo](http://ranga.staff.uom.lk) 
