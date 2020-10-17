@@ -25,9 +25,10 @@ humans on what is good is the root to most problems.
 detecting parts and damages in vehicles in order to augment the insurance claims 
 process.  
 * I received my Bachelor’s Degree from [University of Moratuwa](https://uom.lk) in 
-2020, where I completed my thesis on Multi-Object Tracking and PGM based Panoptic 
-Segmentation under the supervision of [Dr. Ranga Rodrigo](http://ranga.staff.uom.lk) 
-and [Dr Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/).
+2020, where I completed my 
+<a href="https://github.com/kahnchana/fyp_report/blob/master/main/thesis.pdf" target="_blank">thesis</a>
+on Multi-Object Tracking and PGM based Panoptic Segmentation under the supervision of 
+[Dr. Ranga Rodrigo](http://ranga.staff.uom.lk) and [Dr Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/).
 * I completed my internship at [FiveAI](https://five.ai), UK supporting their research efforts to 
 building better self-driving cars under the supervision of [Dr Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/), 
 [Dr Vibhav Vineet](http://vibhavvineet.info), and 
