@@ -20,10 +20,9 @@ humans on what is good is the root to most problems.
 
 {% endcomment %}
 
-
-* I currently work at VeracityAI building better computer vision algorithms for 
-detecting parts and damages in vehicles in order to augment the insurance claims 
-process.  
+* I currently work at [MBZUAI](https://mbzuai.ac.ae/) as a research assistant working in the computer vision department.
+* I previously worked for [WENN](http://wenn.no) and [VeracityAI](http://veracityai.com/) researching and building 
+computer vision algorithms aimed at augmenting vehicle insurance claims processing.
 * I received my Bachelor’s Degree from [University of Moratuwa](https://uom.lk) in 
 2020, where I completed my 
 <a href="https://github.com/kahnchana/fyp_report/blob/master/main/thesis.pdf" target="_blank">thesis</a>
