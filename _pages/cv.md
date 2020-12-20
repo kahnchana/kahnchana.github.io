@@ -11,6 +11,8 @@ redirect_from:
 
 > Avid problem solver, interested in the fields of Probability, Statistics & Machine Learning.
 
+Complete [academic CV](https://kahnchana.github.io/files/KR_academic_cv.pdf) for more details about me. 
+
 
 <h2 style="margin-top: 40px;"> Education </h2>
 
@@ -87,4 +89,3 @@ Also possess basic knowledge in C++, C, Lua, and Verilog.
 
 <h2 style="margin-top: 40px;"> Other </h2>
 
-Complete [academic CV](https://kahnchana.github.io/files/KR_academic_cv.pdf) for more details about me. 
