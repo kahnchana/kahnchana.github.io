@@ -20,7 +20,8 @@ humans on what is good is the root to most problems.
 
 {% endcomment %}
 
-* I currently work at [MBZUAI](https://mbzuai.ac.ae/) as a research assistant working in the computer vision department.
+* I currently work at [MBZUAI](https://mbzuai.ac.ae/) as a research assistant working in the computer vision department
+under the supervision of [Dr Salman Khan](https://salman-h-khan.github.io/).
 * I previously worked for [WENN](http://wenn.no) and [VeracityAI](http://veracityai.com/) researching and building 
 computer vision algorithms aimed at augmenting vehicle insurance claims processing.
 * I received my Bachelor’s Degree from [University of Moratuwa](https://uom.lk) in 
