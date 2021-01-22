@@ -36,7 +36,7 @@ building better self-driving cars under the supervision of [Dr Sadeep Jayasumana
 * I am interested in **Computer Vision and Machine Learning** with focus on the 
 subdomains of Few Shot Learning, Self-Supervised Learning, and Interpretable 
 Representation Learning. 
-* I enjoy poetry, dancing, and debating during my leisure time. 
+* I enjoy poetry, dancing, and theatre during my leisure time. 
 
 <h2 style="margin-top: 40px;"> Recent </h2>
 * January, 2021. [Paper](https://openreview.net/forum?id=VJnrYcnRc6) accepted for poster presentation at ICLR 2021.
