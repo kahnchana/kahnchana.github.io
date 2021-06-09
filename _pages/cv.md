@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-> Avid problem solver, interested in the fields of Probability, Statistics & Machine Learning.
+> Avid problem solver, interested in the fields of Computer Vision and Machine Learning.
 
 Complete [academic CV](https://kahnchana.github.io/files/KR_academic_cv.pdf) for more details about me. 
 
@@ -20,32 +20,29 @@ Complete [academic CV](https://kahnchana.github.io/files/KR_academic_cv.pdf) for
 University of Moratuwa, Sri Lanka (Dean's List: Semester 1, 2, 3, 4, 6, 7, 8) <br>
 Most Outstanding Graduand of the Year (valedictorian) - 2020
 
+{% comment %} 
 **Secondary Education** <br>
 Royal College, Colombo, Sri Lanka - GCE Advanced Level: z-score 2.83
+{% endcomment %}
 
 <h2 style="margin-top: 40px;"> Work Experience </h2>
 
-Jan 2019 - Jan 2020 <br>
-**Associate Data Scientist - VeracityAI, Colombo, Sri Lanka** 
-* Research on LIDAR based examining of buildings and structures for maintenance and insurance purposes
-* Developing computer vision component of vehicle damage estimation system for insurance purposes: product was
-developed beyond MVP stage with real-world testing
-* Setting up deep neural networks for pixel-wise classification of vehicle parts and damage on company datasets
-* Implementation of quantized neural network architectures efficient for inference on edge devices
 
+**MBZUAI, UAE** <br>
+Nov 2021 - Aug 2021: Research Assistant <br>
 
-June 2018 - Dec 2018 <br>
-**Research Intern - FiveAI, Cambridge, UK**
-* Developing a model for orientation estimation of objects in 2D image feeds and deploying to vehicle software stack 
-* Training object detection models on large datasets while optimizing data-feeding and evaluation pipelines
-* Exploring and integrating synthetic data to training datasets and verifying improvements for certain tasks with augmented datasets
-* Working on neural network verification and exploration through methods like GradCam, Saliency Maps, and TCAV. 
+**VeracityAI, Colombo, Sri Lanka** <br>
+Jan 2020 - Oct 2020: Machine Learning Engineer <br>
+Jan 2019 - Jan 2020: Associate Data Scientist <br>
+
+**FiveAI, Cambridge, UK** <br>
+June 2018 - Dec 2018: Research Intern 
 
 
 <h2 style="margin-top: 40px;"> Publications </h2>
-
+* S. Ramasinghe, K Ranasinghe, Salman Khan, Nick Barnes, and Stephen Gould, Conditional Generative Modeling via Learning the Latent Space, ICLR 2021.
 * S. Jayasumana, K. Ranasinghe, M. Jayawardhana, S. Liyanaarachchi and H. Ranasinghe, 
-Bipartite Conditional Random Fields for Panoptic Segmentation, 2019 arxiv preprint.
+Bipartite Conditional Random Fields for Panoptic Segmentation, BMVC 2020.
 * K. Ranasinghe, M. Jayawardhana, S. Liyanaarachchi and H. Ranasinghe, 
 Extending Multi-Object Tracking systems to better exploit appearance and 3D information, 
 2019 arxiv preprint.
