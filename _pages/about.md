@@ -32,7 +32,7 @@ humans on what is good is the root to most problems.
 {% endcomment %}
 
 * Research Assistant at [MBZUAI](https://mbzuai.ac.ae/) CV department under 
-  [Dr Salman Khan](https://salman-h-khan.github.io/).
+  [Dr Salman Khan](https://salman-h-khan.github.io/) and [Dr Muzammal Naseer](https://muzammal-naseer.netlify.app/).
 * B.Sc. from [University of Moratuwa](https://uom.lk) (graduated 2020), with
   <a href="https://github.com/kahnchana/fyp_report/blob/master/main/thesis.pdf" target="_blank">thesis</a>
   on Multi-Object Tracking and Panoptic Segmentation under 
