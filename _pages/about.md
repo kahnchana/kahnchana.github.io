@@ -28,11 +28,12 @@ humans on what is good is the root to most problems.
   building better self-driving cars under the supervision of [Dr Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/),
   [Dr Vibhav Vineet](http://vibhavvineet.info), and
   [Dr Sina Samangooei](https://scholar.google.com/citations?user=bOfKAGQAAAAJ&hl=en).
-  
+
+* Research Assistant at [MBZUAI](https://mbzuai.ac.ae/) CV department under
+  [Dr Salman Khan](https://salman-h-khan.github.io/) and [Dr Muzammal Naseer](https://muzammal-naseer.netlify.app/).
 {% endcomment %}
 
-* Research Assistant at [MBZUAI](https://mbzuai.ac.ae/) CV department under 
-  [Dr Salman Khan](https://salman-h-khan.github.io/) and [Dr Muzammal Naseer](https://muzammal-naseer.netlify.app/).
+* PhD student at Stony Brook University, NY, USA.
 * B.Sc. from [University of Moratuwa](https://uom.lk) (graduated 2020), with
   <a href="https://github.com/kahnchana/fyp_report/blob/master/main/thesis.pdf" target="_blank">thesis</a>
   on Multi-Object Tracking and Panoptic Segmentation under 
