@@ -42,6 +42,9 @@ humans on what is good is the root to most problems.
   Interpretable Representations, and Video Analysis. 
 * Enjoy poetry, dancing, and theatre during my leisure time. 
 
+Have a look at my resume [here](https://kahnchana.github.io/files/KR_academic_cv.pdf) for more details. 
+
+
 <h2 style="margin-top: 40px;"> Recent </h2>
 * July 2021: [On Improving Adversarial Transferability of Vision Transformers](https://arxiv.org/abs/2106.04169) (pre-print).
 * May 2021: [Intriguing Properties of Vision Transformers](https://arxiv.org/abs/2105.10497) (pre-print).
