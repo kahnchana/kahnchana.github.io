@@ -47,7 +47,7 @@ Have a look at my resume [here](https://kahnchana.github.io/files/KR_academic_cv
 
 <h2 style="margin-top: 40px;"> Recent </h2>
 * July 2021: [On Improving Adversarial Transferability of Vision Transformers](https://arxiv.org/abs/2106.04169) (pre-print).
-* May 2021: [Intriguing Properties of Vision Transformers](https://arxiv.org/abs/2105.10497) (pre-print).
+* May 2021: [Intriguing Properties of Vision Transformers](https://arxiv.org/abs/2105.10497) (accepted to NeurIPS 2021).
 * March 2021: [Orthogonal Projection Loss](https://arxiv.org/abs/2103.14021) (accepted to ICCV 2021).
 * January, 2021: [Conditional Generative Modeling](https://openreview.net/forum?id=VJnrYcnRc6), ICLR 2021.
 * September, 2020: [Panoptic Segmentation](https://www.bmvc2020-conference.com/conference/papers/paper_0184.html), BMVC 2020 (oral). 
