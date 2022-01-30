@@ -29,11 +29,11 @@ humans on what is good is the root to most problems.
   [Dr Vibhav Vineet](http://vibhavvineet.info), and
   [Dr Sina Samangooei](https://scholar.google.com/citations?user=bOfKAGQAAAAJ&hl=en).
 
-* Research Assistant at [MBZUAI](https://mbzuai.ac.ae/) CV department under
-  [Dr Salman Khan](https://salman-h-khan.github.io/) and [Dr Muzammal Naseer](https://muzammal-naseer.netlify.app/).
 {% endcomment %}
 
-* PhD student at Stony Brook University, NY, USA.
+* PhD student at Stony Brook University, NY, USA advised by [Prof Michael Ryoo](http://michaelryoo.com/).
+* Former Research Assistant at [MBZUAI](https://mbzuai.ac.ae/) with
+  [Dr Salman Khan](https://salman-h-khan.github.io/) and [Dr Muzammal Naseer](https://muzammal-naseer.netlify.app/).
 * B.Sc. from [University of Moratuwa](https://uom.lk) (graduated 2020), with
   <a href="https://github.com/kahnchana/fyp_report/blob/master/main/thesis.pdf" target="_blank">thesis</a>
   on Multi-Object Tracking and Panoptic Segmentation under 
@@ -47,7 +47,7 @@ Have a look at my resume [here](https://kahnchana.github.io/files/KR_academic_cv
 
 <h2 style="margin-top: 40px;"> Recent </h2>
 * November 2021: [Self-supervised Video Transformers](https://arxiv.org/abs/2112.01514) (under-review).
-* July 2021: [On Improving Adversarial Transferability of Vision Transformers](https://arxiv.org/abs/2106.04169) (under review).
+* July 2021: [Adversarial Transferability of Vision Transformers](https://openreview.net/forum?id=D6nH3719vZy&noteId=y7gMoMUg72R), ICLR 2022 (spotlight).
 * May 2021: [Intriguing Properties of Vision Transformers](https://arxiv.org/abs/2105.10497), NeurIPS 2021 (spotlight).
 * March 2021: [Orthogonal Projection Loss](https://arxiv.org/abs/2103.14021), ICCV 2021.
 * January, 2021: [Conditional Generative Modeling](https://openreview.net/forum?id=VJnrYcnRc6), ICLR 2021.
