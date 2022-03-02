@@ -46,7 +46,7 @@ Have a look at my resume [here](https://kahnchana.github.io/files/KR_academic_cv
 
 
 <h2 style="margin-top: 40px;"> Recent </h2>
-* November 2021: [Self-supervised Video Transformers](https://arxiv.org/abs/2112.01514) (under-review).
+* November 2021: [Self-supervised Video Transformers](https://arxiv.org/abs/2112.01514), CVPR 2021.
 * July 2021: [Adversarial Transferability of Vision Transformers](https://openreview.net/forum?id=D6nH3719vZy&noteId=y7gMoMUg72R), ICLR 2022 (spotlight).
 * May 2021: [Intriguing Properties of Vision Transformers](https://arxiv.org/abs/2105.10497), NeurIPS 2021 (spotlight).
 * March 2021: [Orthogonal Projection Loss](https://arxiv.org/abs/2103.14021), ICCV 2021.
