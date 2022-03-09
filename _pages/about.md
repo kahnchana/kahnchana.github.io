@@ -42,7 +42,7 @@ humans on what is good is the root to most problems.
   Interpretable Representations, and Video Analysis. 
 * Enjoy poetry, dancing, and theatre during my leisure time. 
 
-Have a look at my resume [here](https://kahnchana.github.io/files/KR_academic_cv.pdf) for more details. 
+Have a look at my [resume](https://kahnchana.github.io/files/KR_academic_cv.pdf) for more details. 
 
 
 <h2 style="margin-top: 40px;"> Recent </h2>
