@@ -31,13 +31,15 @@ humans on what is good is the root to most problems.
 
 {% endcomment %}
 
-* PhD student at Stony Brook University, NY, USA advised by [Prof Michael Ryoo](http://michaelryoo.com/).
+* PhD student at Stony Brook University, NY, USA advised by [Michael Ryoo](http://michaelryoo.com/).
+* Former Research Intern at [Apple](https://machinelearning.apple.com/) with 
+  [Jonathon Shlens](https://scholar.google.com/citations?&user=sm1q2bYAAAAJ). 
 * Former Research Assistant at [MBZUAI](https://mbzuai.ac.ae/) with
-  [Dr Salman Khan](https://salman-h-khan.github.io/) and [Dr Muzammal Naseer](https://muzammal-naseer.netlify.app/).
+  [Salman Khan](https://salman-h-khan.github.io/) and [Muzammal Naseer](https://muzammal-naseer.netlify.app/).
 * B.Sc. from [University of Moratuwa](https://uom.lk) (graduated 2020), with
   <a href="https://github.com/kahnchana/fyp_report/blob/master/main/thesis.pdf" target="_blank">thesis</a>
-  on Multi-Object Tracking and Panoptic Segmentation under 
-  [Dr. Ranga Rodrigo](http://ranga.staff.uom.lk) and [Dr Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/).
+  on Multi-Object Tracking and Panoptic Segmentation advised by 
+  [Ranga Rodrigo](http://ranga.staff.uom.lk) and [Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/).
 * Interested in **Computer Vision and Machine Learning** with focus on the subdomains of Self-Supervised Learning, 
   Interpretable Representations, and Video Analysis. 
 * Enjoy poetry, dancing, and theatre during my leisure time. 
