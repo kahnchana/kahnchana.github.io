@@ -48,6 +48,7 @@ Have a look at my [resume](https://kahnchana.github.io/files/KR_academic_cv.pdf)
 
 
 <h2 style="margin-top: 40px;"> Recent </h2>
+* October 2022: [Perceptual Grouping in Vision-Language Models](https://arxiv.org/abs/2210.09996).
 * November 2021: [Self-supervised Video Transformers](https://arxiv.org/abs/2112.01514), CVPR 2022 (oral).
 * July 2021: [Adversarial Transferability of Vision Transformers](https://openreview.net/forum?id=D6nH3719vZy&noteId=y7gMoMUg72R), ICLR 2022 (spotlight).
 * May 2021: [Intriguing Properties of Vision Transformers](https://arxiv.org/abs/2105.10497), NeurIPS 2021 (spotlight).
