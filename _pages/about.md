@@ -41,13 +41,14 @@ humans on what is good is the root to most problems.
   on Multi-Object Tracking and Panoptic Segmentation advised by 
   [Ranga Rodrigo](http://ranga.staff.uom.lk) and [Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/).
 * Interested in **Computer Vision and Machine Learning** with focus on the subdomains of Self-Supervised Learning, 
-  Interpretable Representations, and Video Analysis. 
+  Cross-Modal Interpretable Representations, and Video Analysis. 
 * Enjoy poetry, dancing, and theatre during my leisure time. 
 
 Have a look at my [resume](https://kahnchana.github.io/files/KR_academic_cv.pdf) for more details. 
 
 
 <h2 style="margin-top: 40px;"> Recent </h2>
+* November 2022: [Text to Image Diffusion Models are Zero-Shot Segmentors](https://arxiv.org/abs/2211.13224).
 * October 2022: [Perceptual Grouping in Vision-Language Models](https://arxiv.org/abs/2210.09996).
 * November 2021: [Self-supervised Video Transformers](https://arxiv.org/abs/2112.01514), CVPR 2022 (oral).
 * July 2021: [Adversarial Transferability of Vision Transformers](https://openreview.net/forum?id=D6nH3719vZy&noteId=y7gMoMUg72R), ICLR 2022 (spotlight).
