@@ -47,9 +47,19 @@ humans on what is good is the root to most problems.
 Have a look at my [resume](https://kahnchana.github.io/files/KR_academic_cv.pdf) for more details. 
 
 
-<h2 style="margin-top: 40px;"> Recent </h2>
-* November 2022: [Text to Image Diffusion Models are Zero-Shot Segmentors](https://arxiv.org/abs/2211.13224).
-* October 2022: [Perceptual Grouping in Vision-Language Models](https://arxiv.org/abs/2210.09996).
+<h2 style="margin-top: 40px;"> Updates </h2>
+
+* Preprint of [Language-based Video Self-Supervised Learning](https://arxiv.org/abs/2307.10922) is out on arxiv.
+* Our paper [Perceptual Grouping in Contrastive VLMs](https://arxiv.org/abs/2210.09996) accepted to ICCV 2023!
+* Work on [Diffusion Illusions](https://diffusionillusions.com) wins best demo award at CVPR 2023!
+* [T2I Diffusion Models are Zero-Shot Segmentors](https://arxiv.org/abs/2211.13224) presented at CVPR workshop 2023.
+ 
+
+<h2 style="margin-top: 40px;"> Publications </h2>
+
+* May 2023: [Language-based Video Self-Supervised Learning](https://arxiv.org/abs/2307.10922). 
+* November 2022: [T2I Diffusion Models are Zero-Shot Segmentors](https://arxiv.org/abs/2211.13224), CVPR workshop 2023.
+* October 2022: [Perceptual Grouping in Contrastive VLMs](https://arxiv.org/abs/2210.09996), ICCV 2023.
 * November 2021: [Self-supervised Video Transformers](https://arxiv.org/abs/2112.01514), CVPR 2022 (oral).
 * July 2021: [Adversarial Transferability of Vision Transformers](https://openreview.net/forum?id=D6nH3719vZy&noteId=y7gMoMUg72R), ICLR 2022 (spotlight).
 * May 2021: [Intriguing Properties of Vision Transformers](https://arxiv.org/abs/2105.10497), NeurIPS 2021 (spotlight).
