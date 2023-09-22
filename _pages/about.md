@@ -49,7 +49,7 @@ Have a look at my [resume](https://kahnchana.github.io/files/KR_academic_cv.pdf)
 
 <h2 style="margin-top: 40px;"> Updates </h2>
 
-* Preprint of [Language-based Video Self-Supervised Learning](https://arxiv.org/abs/2307.10922) is out on arxiv.
+* [Language-based Video Self-Supervised Learning](https://arxiv.org/abs/2307.10922) accepted to NeurIPS 2023!.
 * Our paper [Perceptual Grouping in Contrastive VLMs](https://arxiv.org/abs/2210.09996) accepted to ICCV 2023!
 * Work on [Diffusion Illusions](https://diffusionillusions.com) wins best demo award at CVPR 2023!
 * [T2I Diffusion Models are Zero-Shot Segmentors](https://arxiv.org/abs/2211.13224) presented at CVPR workshop 2023.
