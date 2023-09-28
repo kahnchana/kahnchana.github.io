@@ -57,7 +57,7 @@ Have a look at my [resume](https://kahnchana.github.io/files/KR_academic_cv.pdf)
 
 <h2 style="margin-top: 40px;"> Publications </h2>
 
-* May 2023: [Language-based Video Self-Supervised Learning](https://arxiv.org/abs/2307.10922). 
+* May 2023: [Language-based Video Self-Supervised Learning](https://arxiv.org/abs/2307.10922), NeurIPS 2023. 
 * November 2022: [T2I Diffusion Models are Zero-Shot Segmentors](https://arxiv.org/abs/2211.13224), CVPR workshop 2023.
 * October 2022: [Perceptual Grouping in Contrastive VLMs](https://arxiv.org/abs/2210.09996), ICCV 2023.
 * November 2021: [Self-supervised Video Transformers](https://arxiv.org/abs/2112.01514), CVPR 2022 (oral).
