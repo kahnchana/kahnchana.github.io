@@ -38,12 +38,12 @@ humans on what is good is the root to most problems.
   [Jonathon Shlens](https://scholar.google.com/citations?&user=sm1q2bYAAAAJ).
 * Former Research Assistant at [MBZUAI](https://mbzuai.ac.ae/) with
   [Salman Khan](https://salman-h-khan.github.io/) and [Muzammal Naseer](https://muzammal-naseer.netlify.app/).
-* B.Sc. from [University of Moratuwa](https://uom.lk) (graduated 2020), with
+<!-- * B.Sc. from [University of Moratuwa](https://uom.lk) (graduated 2020), with
   <a href="https://github.com/kahnchana/fyp_report/blob/master/main/thesis.pdf" target="_blank">thesis</a>
   on Multi-Object Tracking and Panoptic Segmentation advised by 
-  [Ranga Rodrigo](http://ranga.staff.uom.lk) and [Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/).
+  [Ranga Rodrigo](http://ranga.staff.uom.lk) and [Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/). -->
 * Interested in **Computer Vision and Machine Learning** with focus on the subdomains of Self-Supervised Learning, 
-  Cross-Modal Interpretable Representations, and Video Analysis. 
+  Video Understanding, and Vision-Langauge Representations. 
 * Enjoy poetry, dancing, and theatre during my leisure time. 
 
 Have a look at my [resume](https://kahnchana.github.io/files/KR_academic_cv.pdf) for more details. 
