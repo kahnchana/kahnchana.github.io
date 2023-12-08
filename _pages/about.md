@@ -43,7 +43,7 @@ humans on what is good is the root to most problems.
   on Multi-Object Tracking and Panoptic Segmentation advised by 
   [Ranga Rodrigo](http://ranga.staff.uom.lk) and [Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/). -->
 * Interested in **Computer Vision and Machine Learning** with focus on the subdomains of Self-Supervised Learning, 
-  Video Understanding, and Vision-Langauge Representations. 
+  Video Understanding, and Vision-Language Representations. 
 * Enjoy poetry, dancing, and theatre during my leisure time. 
 
 Have a look at my [resume](https://kahnchana.github.io/files/KR_academic_cv.pdf) for more details. 
