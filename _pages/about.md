@@ -36,24 +36,21 @@ humans on what is good is the root to most problems.
   [Tsung-Yu Lin](https://scholar.google.com/citations?user=KyToxZoAAAAJ&hl=en).
 * Former Research Intern at [Apple](https://machinelearning.apple.com/) with 
   [Jonathon Shlens](https://scholar.google.com/citations?&user=sm1q2bYAAAAJ).
-* Former Research Assistant at [MBZUAI](https://mbzuai.ac.ae/) with
-  [Salman Khan](https://salman-h-khan.github.io/) and [Muzammal Naseer](https://muzammal-naseer.netlify.app/).
+* Prior to PhD, Research Assistant at [MBZUAI](https://mbzuai.ac.ae/) with [Muzammal Naseer](https://muzammal-naseer.netlify.app/), [Salman Khan](https://salman-h-khan.github.io/), and [Fahad Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en).
+* Interested in **Computer Vision and Machine Learning** with focus on the subdomains of Self-Supervised Learning, Video Understanding, and Vision-Language Representations. 
 <!-- * B.Sc. from [University of Moratuwa](https://uom.lk) (graduated 2020), with
   <a href="https://github.com/kahnchana/fyp_report/blob/master/main/thesis.pdf" target="_blank">thesis</a>
   on Multi-Object Tracking and Panoptic Segmentation advised by 
   [Ranga Rodrigo](http://ranga.staff.uom.lk) and [Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/). -->
-* Interested in **Computer Vision and Machine Learning** with focus on the subdomains of Self-Supervised Learning, 
-  Video Understanding, and Vision-Language Representations. 
-* Enjoy poetry, dancing, and theatre during my leisure time. 
+* Enjoy ballroom dancing, cooking, and theatre during my leisure time. 
 
 Have a look at my [resume](https://kahnchana.github.io/files/KR_academic_cv.pdf) for more details. 
 
 
 <h2 style="margin-top: 40px;"> Updates </h2>
 
-* Our [Diffusion Illusions](https://arxiv.org/abs/2312.03817) paper is now on arxiv!
-* [Language-based Video Self-Supervised Learning](https://arxiv.org/abs/2307.10922) accepted to NeurIPS 2023!
-* Work on [Diffusion Illusions](https://diffusionillusions.com) wins best demo award at CVPR 2023!
+* Our paper on [Localization in Visual-LLMs]() accepted to CVPR '24!
+* [Language-based Video Self-Supervised Learning](https://arxiv.org/abs/2307.10922) accepted to NeurIPS '23!
  
 
 <h2 style="margin-top: 40px;"> Selected Publications </h2>
@@ -68,3 +65,7 @@ Have a look at my [resume](https://kahnchana.github.io/files/KR_academic_cv.pdf)
 * January, 2021: [Conditional Generative Modeling](https://openreview.net/forum?id=VJnrYcnRc6), ICLR 2021.
 <!-- * September, 2020: [Panoptic Segmentation](https://www.bmvc2020-conference.com/conference/papers/paper_0184.html), BMVC 2020 (oral).  -->
 * September 2019: [Activity Recognition in Videos](https://ieeexplore.ieee.org/document/8060555), TCSVT journal. 
+
+
+<h2 style="margin-top: 40px;"> Featured Work </h2>
+* Our [Diffusion Illusions](https://diffusionillusions.com) work (CVPR '23 Best Demo) featured on [Stony Brook News](https://ai.stonybrook.edu/about-us/News/AI-Model-Creating-Optical-Illusions-Wins-Demo-Award-CVPR-2023).
