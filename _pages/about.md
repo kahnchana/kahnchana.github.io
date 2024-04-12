@@ -51,7 +51,7 @@ Have a look at my [resume](https://kahnchana.github.io/files/KR_academic_cv.pdf)
 * [MVU paper](https://arxiv.org/abs/2403.16998) is on now arxiv. 
 * [Language Repository for Long Video Understanding](https://arxiv.org/abs/2403.14622) on arxiv.
 * Preprint for [HLLS framework](https://arxiv.org/abs/2403.14616) is now on arxiv.
-* Our paper on [Localization in Visual-LLMs]() accepted to CVPR '24!
+* Our paper on [Localization in Visual-LLMs](https://arxiv.org/abs/2404.07449) accepted to CVPR '24!
  
 
 <h2 style="margin-top: 40px;"> Selected Publications </h2>
