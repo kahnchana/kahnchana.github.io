@@ -48,7 +48,7 @@ Have a look at my [resume](https://kahnchana.github.io/files/KR_academic_cv.pdf)
 
 
 <h2 style="margin-top: 40px;"> Updates </h2>
-* [MVU paper](https://arxiv.org/abs/2403.16998) is on now arxiv. 
+* [MVU paper](https://arxiv.org/abs/2403.16998) is now on arxiv. 
 * [Language Repository for Long Video Understanding](https://arxiv.org/abs/2403.14622) on arxiv.
 * Preprint for [HLLS framework](https://arxiv.org/abs/2403.14616) is now on arxiv.
 * Our paper on [Localization in Visual-LLMs](https://arxiv.org/abs/2404.07449) accepted to CVPR '24!
@@ -56,6 +56,7 @@ Have a look at my [resume](https://kahnchana.github.io/files/KR_academic_cv.pdf)
 
 <h2 style="margin-top: 40px;"> Selected Publications </h2>
 
+* Dec 2023: [Localization in Visual-LLMs Improves Reasoning](https://arxiv.org/abs/2404.07449), CVPR 2024.
 * May 2023: [Language-based Video Self-Supervised Learning](https://arxiv.org/abs/2307.10922), NeurIPS 2023. 
 * November 2022: [T2I Diffusion Models are Zero-Shot Segmentors](https://arxiv.org/abs/2211.13224), CVPR workshop 2023.
 * October 2022: [Perceptual Grouping in Contrastive VLMs](https://arxiv.org/abs/2210.09996), ICCV 2023.
