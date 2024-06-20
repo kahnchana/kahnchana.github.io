@@ -50,7 +50,7 @@ Have a look at my [Curriculum Vitae](https://kahnchana.github.io/files/KR_academ
 <h2 style="margin-top: 40px;"> Updates </h2>
 * [LVNet](https://github.com/jongwoopark7978/LVNet) code and paper released!
 * [HLLS paper](https://arxiv.org/abs/2403.14616) accepted to MICCAI '24.
-* [MVU paper](https://arxiv.org/abs/2403.16998) is now on arxiv. 
+* [MVU paper](https://arxiv.org/abs/2403.16998) is now on arxiv.
 * [Language Repository for Long Video Understanding](https://arxiv.org/abs/2403.14622) on arxiv.
  
 
