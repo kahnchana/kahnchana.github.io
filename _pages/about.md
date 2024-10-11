@@ -32,6 +32,7 @@ humans on what is good is the root to most problems.
 {% endcomment %}
 
 * PhD student at Stony Brook University, NY, USA advised by [Michael Ryoo](http://michaelryoo.com/).
+* Current Student Researcher at Google Research with [Srikumar Ramalingam](https://users.cs.utah.edu/~srikumar).
 * Former Research Intern at [Meta](https://research.facebook.com) with 
   [Tsung-Yu Lin](https://scholar.google.com/citations?user=KyToxZoAAAAJ&hl=en).
 * Former Research Intern at [Apple](https://machinelearning.apple.com/) with 
