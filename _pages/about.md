@@ -49,10 +49,9 @@ Have a look at my [Curriculum Vitae](https://kahnchana.github.io/files/KR_academ
 
 
 <h2 style="margin-top: 40px;"> Updates </h2>
+* [CoPT for Domain Adaptive Segmentation](https://github.com/cfmata/CoPT) presented at ECCV '24
 * Code & paper for [LLaRA: Large Language and Robotics Assistant](https://github.com/LostXine/LLaRA)
 * [LVNet](https://github.com/jongwoopark7978/LVNet) code and paper released.
-* [MVU paper](https://arxiv.org/abs/2403.16998) is now on arxiv.
-* [Language Repository for Long Video Understanding](https://arxiv.org/abs/2403.14622) on arxiv.
  
 
 <h2 style="margin-top: 40px;"> Selected Publications </h2>
