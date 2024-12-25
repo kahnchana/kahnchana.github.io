@@ -49,9 +49,9 @@ Have a look at my [Curriculum Vitae](https://kahnchana.github.io/files/KR_academ
 
 
 <h2 style="margin-top: 40px;"> Updates </h2>
+* [LatentCRF for efficient image generation](https://arxiv.org/abs/2412.18596) is now on arxiv.
 * [CoPT for Domain Adaptive Segmentation](https://github.com/cfmata/CoPT) presented at ECCV '24
 * Code & paper for [LLaRA: Large Language and Robotics Assistant](https://github.com/LostXine/LLaRA)
-* [LVNet](https://github.com/jongwoopark7978/LVNet) code and paper released.
  
 
 <h2 style="margin-top: 40px;"> Selected Publications </h2>
