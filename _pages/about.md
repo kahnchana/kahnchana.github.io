@@ -14,11 +14,6 @@ redirect_from:
 Everyone believes that technology should be used for the betterment of the world, but the contrasting perceptions of 
 humans on what is good is the root to most problems.
 
-<iframe width="966" height="543" src="https://www.youtube.com/embed/_m2dRDQEC1A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br>
-
-* I previously worked for [WENN](http://wenn.no) and [VeracityAI](http://veracityai.com/) researching and building
-  computer vision algorithms aimed at augmenting vehicle insurance claims processing.
 * I received my Bachelor’s Degree from [University of Moratuwa](https://uom.lk) in
   2020, where I completed my
   <a href="https://github.com/kahnchana/fyp_report/blob/master/main/thesis.pdf" target="_blank">thesis</a>
@@ -36,8 +31,9 @@ humans on what is good is the root to most problems.
 * Former Research Intern at [Meta](https://research.facebook.com) with 
   [Tsung-Yu Lin](https://scholar.google.com/citations?user=KyToxZoAAAAJ&hl=en).
 * Former Research Intern at [Apple](https://machinelearning.apple.com/) with 
-  [Jonathon Shlens](https://scholar.google.com/citations?&user=sm1q2bYAAAAJ).
-* Prior to PhD, Research Assistant at [MBZUAI](https://mbzuai.ac.ae/) with [Muzammal Naseer](https://muzammal-naseer.netlify.app/), [Salman Khan](https://salman-h-khan.github.io/), and [Fahad Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en).
+  [Jonathon Shlens](https://scholar.google.com/citations?&user=sm1q2bYAAAAJ) and 
+  [Alexander Toshev](https://sites.google.com/view/alextoshev).
+* Prior to PhD, Research Assistant at [MBZUAI](https://mbzuai.ac.ae/) with [Salman Khan](https://salman-h-khan.github.io/), [Muzammal Naseer](https://muzammal-naseer.netlify.app/), and [Fahad Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en).
 * Interested in **Computer Vision and Machine Learning** with focus on the subdomains of Self-Supervised Learning, Video Understanding, and Vision-Language Representations. 
 <!-- * B.Sc. from [University of Moratuwa](https://uom.lk) (graduated 2020), with
   <a href="https://github.com/kahnchana/fyp_report/blob/master/main/thesis.pdf" target="_blank">thesis</a>
