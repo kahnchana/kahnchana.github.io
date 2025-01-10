@@ -27,10 +27,11 @@ humans on what is good is the root to most problems.
 {% endcomment %}
 
 * PhD student at Stony Brook University, NY, USA advised by [Michael Ryoo](http://michaelryoo.com/).
-* Current Student Researcher at Google Research with [Srikumar Ramalingam](https://users.cs.utah.edu/~srikumar).
+* Former Student Researcher at [Google Research](https://research.google) 
+  with [Srikumar Ramalingam](https://users.cs.utah.edu/~srikumar).
 * Former Research Intern at [Meta](https://research.facebook.com) with 
   [Tsung-Yu Lin](https://scholar.google.com/citations?user=KyToxZoAAAAJ&hl=en).
-* Former Research Intern at [Apple](https://machinelearning.apple.com/) with 
+* Former Research Intern at [Apple](https://machinelearning.apple.com) with 
   [Jonathon Shlens](https://scholar.google.com/citations?&user=sm1q2bYAAAAJ) and 
   [Alexander Toshev](https://sites.google.com/view/alextoshev).
 * Prior to PhD, Research Assistant at [MBZUAI](https://mbzuai.ac.ae/) with [Salman Khan](https://salman-h-khan.github.io/), [Muzammal Naseer](https://muzammal-naseer.netlify.app/), and [Fahad Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en).
