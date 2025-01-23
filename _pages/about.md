@@ -42,13 +42,14 @@ humans on what is good is the root to most problems.
   [Ranga Rodrigo](http://ranga.staff.uom.lk) and [Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/). -->
 * Enjoy ballroom dancing, cooking, and theatre during my leisure time. 
 
-Have a look at my [Curriculum Vitae](https://kahnchana.github.io/files/KR_academic_cv.pdf) for more details. 
+Have a look at my [Curriculum Vitae](https://kahnchana.github.io/files/KR_academic_cv.pdf) for more details and
+[Google Scholar](https://scholar.google.com/citations?user=K2WBZTwAAAAJ) for full list of papers. 
 
 
 <h2 style="margin-top: 40px;"> Updates </h2>
+* [MVU](https://github.com/kahnchana/mvu) for Long Video QnA accepted to ICLR'25!   
+* [LLaRA: Large Language and Robotics Assistant](https://github.com/LostXine/LLaRA) accepted to ICLR'25!
 * Checkout [LatentCRF for efficient text-to-image generation](https://latentcrf.github.io).
-* [CoPT for Domain Adaptive Segmentation](https://github.com/cfmata/CoPT) presented at ECCV '24
-* Code & paper for [LLaRA: Large Language and Robotics Assistant](https://github.com/LostXine/LLaRA)
  
 
 <h2 style="margin-top: 40px;"> Selected Publications </h2>
