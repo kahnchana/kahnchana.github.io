@@ -47,15 +47,16 @@ Have a look at my [Curriculum Vitae](https://kahnchana.github.io/files/KR_academ
 
 
 <h2 style="margin-top: 40px;"> Updates </h2>
+* [LangRepo](https://github.com/kkahatapitiya/LangRepo) was accepted at ACL 2025!
 * [LangToMo](https://kahnchana.github.io/LangToMo) for language conditioned robot control is now on arxiv. 
-* [MVU](https://github.com/kahnchana/mvu) for Long Video QnA accepted to ICLR'25!   
-* [LLaRA: Large Language and Robotics Assistant](https://github.com/LostXine/LLaRA) accepted to ICLR'25!
 * Checkout [LatentCRF for efficient text-to-image generation](https://latentcrf.github.io).
  
 
 <h2 style="margin-top: 40px;"> Selected Publications </h2>
 
-* Dec 2023: [Localization in Visual-LLMs Improves Reasoning](https://arxiv.org/abs/2404.07449), CVPR 2024.
+* April 2025: [Understanding Long Videos with Multimodal Language Models](https://arxiv.org/abs/2403.16998), ICLR 2025.   
+* April 2025: [LLaRA: Large Language and Robotics Assistant](https://arxiv.org/abs/2406.20095), ICLR 2025.
+* June 2024: [Localization in Visual-LLMs Improves Reasoning](https://arxiv.org/abs/2404.07449), CVPR 2024.
 * May 2023: [Language-based Video Self-Supervised Learning](https://arxiv.org/abs/2307.10922), NeurIPS 2023. 
 * November 2022: [T2I Diffusion Models are Zero-Shot Segmentors](https://arxiv.org/abs/2211.13224), CVPR workshop 2023.
 * October 2022: [Perceptual Grouping in Contrastive VLMs](https://arxiv.org/abs/2210.09996), ICCV 2023.
