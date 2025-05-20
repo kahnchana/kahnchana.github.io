@@ -47,6 +47,7 @@ Have a look at my [Curriculum Vitae](https://kahnchana.github.io/files/KR_academ
 
 
 <h2 style="margin-top: 40px;"> Updates </h2>
+* [LangToMo](https://kahnchana.github.io/LangToMo) for language conditioned robot control is now on arxiv. 
 * [MVU](https://github.com/kahnchana/mvu) for Long Video QnA accepted to ICLR'25!   
 * [LLaRA: Large Language and Robotics Assistant](https://github.com/LostXine/LLaRA) accepted to ICLR'25!
 * Checkout [LatentCRF for efficient text-to-image generation](https://latentcrf.github.io).
