@@ -9,33 +9,24 @@ redirect_from:
 ---
 
 {% comment %} 
-**"With great power, comes great responsibility."** <br>
-
 Everyone believes that technology should be used for the betterment of the world, but the contrasting perceptions of 
 humans on what is good is the root to most problems.
-
-* I received my Bachelor’s Degree from [University of Moratuwa](https://uom.lk) in
-  2020, where I completed my
-  <a href="https://github.com/kahnchana/fyp_report/blob/master/main/thesis.pdf" target="_blank">thesis</a>
-  on Multi-Object Tracking and Image Segmentation under the supervision of
-  [Dr. Ranga Rodrigo](http://ranga.staff.uom.lk) and [Dr Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/).
-* I completed a research internship at [FiveAI](https://five.ai), UK supporting their research efforts to
-  building better self-driving cars under the supervision of [Dr Sadeep Jayasumana](http://www.robots.ox.ac.uk/~sadeep/),
-  [Dr Vibhav Vineet](http://vibhavvineet.info), and
-  [Dr Sina Samangooei](https://scholar.google.com/citations?user=bOfKAGQAAAAJ&hl=en).
-
 {% endcomment %}
 
+[Google Scholar](https://scholar.google.com/citations?user=K2WBZTwAAAAJ) |
+[CV Link](https://kahnchana.github.io/files/KR_academic_cv.pdf) |
+[Github](https://github.com/kahnchana) |
+[Email](mailto:kranasinghe@cs.stonybrook.edu)
+
 * PhD student at Stony Brook University, NY, USA advised by [Michael Ryoo](http://michaelryoo.com/).
-* Former Student Researcher at [Google Research](https://research.google) 
-  with [Srikumar Ramalingam](https://users.cs.utah.edu/~srikumar).
-* Former Research Intern at [Meta](https://research.facebook.com) with 
-  [Tsung-Yu Lin](https://scholar.google.com/citations?user=KyToxZoAAAAJ&hl=en).
-* Former Research Intern at [Apple](https://machinelearning.apple.com) with 
-  [Jonathon Shlens](https://scholar.google.com/citations?&user=sm1q2bYAAAAJ) and 
-  [Alexander Toshev](https://sites.google.com/view/alextoshev).
-* Prior to PhD, Research Assistant at [MBZUAI](https://mbzuai.ac.ae/) with [Salman Khan](https://salman-h-khan.github.io/), [Muzammal Naseer](https://muzammal-naseer.netlify.app/), and [Fahad Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en).
-* Interested in **Computer Vision and Machine Learning** with focus on the subdomains of Self-Supervised Learning, Video Understanding, and Vision-Language Representations. 
+* Research Intern at [Salesforce AI Research](https://www.salesforceairesearch.com) 
+  with [Juan Carlos Niebles](https://scholar.google.com/citations?user=hqNhUCYAAAAJ).
+* Former Intern at [Google Research](https://research.google) with [Srikumar Ramalingam](https://users.cs.utah.edu/~srikumar), 
+  [Meta](https://research.facebook.com) with [Tsung-Yu Lin](https://scholar.google.com/citations?user=KyToxZoAAAAJ&hl=en), 
+  and [Apple](https://machinelearning.apple.com) with [Jonathon Shlens](https://scholar.google.com/citations?&user=sm1q2bYAAAAJ) and [Alexander Toshev](https://sites.google.com/view/alextoshev).
+* Former Researcher at [MBZUAI](https://mbzuai.ac.ae/) with [Salman Khan](https://salman-h-khan.github.io/), [Muzammal Naseer](https://muzammal-naseer.netlify.app/), and [Fahad Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en).
+* Interested in **Computer Vision and Machine Learning** with focus on
+Video Understanding, Vision-Language Representations, and Robot Learning. 
 <!-- * B.Sc. from [University of Moratuwa](https://uom.lk) (graduated 2020), with
   <a href="https://github.com/kahnchana/fyp_report/blob/master/main/thesis.pdf" target="_blank">thesis</a>
   on Multi-Object Tracking and Panoptic Segmentation advised by 
@@ -47,13 +38,13 @@ Have a look at my [Curriculum Vitae](https://kahnchana.github.io/files/KR_academ
 
 
 <h2 style="margin-top: 40px;"> Updates </h2>
-* [LangRepo](https://github.com/kkahatapitiya/LangRepo) was accepted at ACL 2025!
 * [LangToMo](https://kahnchana.github.io/LangToMo) for language conditioned robot control is now on arxiv. 
 * Checkout [LatentCRF for efficient text-to-image generation](https://latentcrf.github.io).
  
 
 <h2 style="margin-top: 40px;"> Selected Publications </h2>
 
+* July, 2025: [Language Repository for Long Video Understanding](https://arxiv.org/abs/2403.14622), ACL Findings 2025.
 * April 2025: [Understanding Long Videos with Multimodal Language Models](https://arxiv.org/abs/2403.16998), ICLR 2025.   
 * April 2025: [LLaRA: Large Language and Robotics Assistant](https://arxiv.org/abs/2406.20095), ICLR 2025.
 * June 2024: [Localization in Visual-LLMs Improves Reasoning](https://arxiv.org/abs/2404.07449), CVPR 2024.
