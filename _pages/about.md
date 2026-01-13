@@ -38,8 +38,7 @@ Have a look at my [Curriculum Vitae](https://kahnchana.github.io/files/KR_academ
 
 
 <h2 style="margin-top: 40px;"> Updates </h2>
-* [LangToMo](https://kahnchana.github.io/LangToMo) for language conditioned robot control is now on arxiv. 
-* Checkout [LatentCRF for efficient text-to-image generation](https://latentcrf.github.io).
+* [LVNet for Long-Video QnA](https://arxiv.org/abs/2406.09396) is accepted to EACL 2026! 
  
 
 <h2 style="margin-top: 40px;"> Selected Publications </h2>
