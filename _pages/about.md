@@ -38,6 +38,7 @@ Have a look at my [Curriculum Vitae](https://kahnchana.github.io/files/KR_academ
 
 
 <h2 style="margin-top: 40px;"> Updates </h2>
+* [FOFPred: Language-Driven Future Optical Flow Prediction](https://fofpred.github.io) is now released. 
 * [IVRA: Visual-Token Relations for Robot Policy](https://arxiv.org/abs/2601.16207) accepted to ICRA 2026!
 * [LVNet for Long-Video QnA](https://arxiv.org/abs/2406.09396) is accepted to EACL 2026!
  
