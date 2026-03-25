@@ -37,12 +37,13 @@ Have a look at my [Curriculum Vitae](https://kahnchana.github.io/files/KR_academ
 
 <h2 style="margin-top: 40px;"> Selected Publications </h2>
 
-* July, 2025: [Language Repository for Long Video Understanding](https://arxiv.org/abs/2403.14622), ACL Findings 2025.
+* July 2025: [Language Repository for Long Video Understanding](https://arxiv.org/abs/2403.14622), ACL Findings 2025.
 * April 2025: [Understanding Long Videos with Multimodal Language Models](https://arxiv.org/abs/2403.16998), ICLR 2025.   
 * April 2025: [LLaRA: Large Language and Robotics Assistant](https://arxiv.org/abs/2406.20095), ICLR 2025.
 * June 2024: [Localization in Visual-LLMs Improves Reasoning](https://arxiv.org/abs/2404.07449), CVPR 2024.
 * May 2023: [Language-based Video Self-Supervised Learning](https://arxiv.org/abs/2307.10922), NeurIPS 2023. 
-* October 2022: [Perceptual Grouping in Contrastive VLMs](https://arxiv.org/abs/2210.09996), ICCV 2023.
+* Mar 2023: [Perceptual Grouping in Contrastive VLMs](https://arxiv.org/abs/2210.09996), ICCV 2023.
+
 <!-- * November 2021: [Self-supervised Video Transformers](https://arxiv.org/abs/2112.01514), CVPR 2022 (oral).
 * July 2021: [Adversarial Transferability of Vision Transformers](https://openreview.net/forum?id=D6nH3719vZy&noteId=y7gMoMUg72R), ICLR 2022 (spotlight).
 * May 2021: [Intriguing Properties of Vision Transformers](https://arxiv.org/abs/2105.10497), NeurIPS 2021 (spotlight).
