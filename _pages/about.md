@@ -13,7 +13,7 @@ redirect_from:
 [Github](https://github.com/kahnchana) |
 [Email](mailto:kranasinghe@cs.stonybrook.edu)
 
-* Research Scientist at [Salesforce AI Research](https://www.salesforceairesearch.com)
+* Senior Research Scientist at [Salesforce AI Research](https://www.salesforceairesearch.com)
 * Interested in **Language Conditioned Video Understanding & Robot Learning**
 * PhD at Stony Brook University, NY, USA advised by [Michael Ryoo](http://michaelryoo.com)
 * Former Intern at [Google Research](https://research.google) with [Srikumar Ramalingam](https://users.cs.utah.edu/~srikumar), 
