@@ -1,6 +1,14 @@
 {% include base_path %}
 
-{% if page.author_profile or layout.author_profile or page.sidebar %}
+{% if page.collection == 'posts' or page.url == '/blog/' %}
+  <aside class="sidebar blog-contents" aria-label="Page contents"{% if page.contents_intro %} data-intro-label="{{ page.contents_intro | escape }}"{% endif %}>
+    <details class="blog-contents__panel" open>
+      <summary>Contents</summary>
+      <nav aria-label="On this page"><ol class="blog-contents__list"></ol></nav>
+      <noscript><p>Enable JavaScript to see the section outline.</p></noscript>
+    </details>
+  </aside>
+{% elsif page.author_profile or layout.author_profile or page.sidebar %}
   <div class="sidebar sticky">
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
   {% if page.sidebar %}

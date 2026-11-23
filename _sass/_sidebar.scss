@@ -235,3 +235,69 @@
     }
   }
 }
+
+/* Blog section navigator: independent of the profile's Stickyfill behavior. */
+.blog-contents {
+  transform: none;
+
+  &[hidden] { display: none; }
+
+  summary {
+    cursor: pointer;
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    font-weight: bold;
+    padding: 0.6em 0;
+  }
+
+  nav { padding: 0.25em 0; }
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ol ol { padding-left: 0.85em; }
+
+  li { margin: 0; font-size: inherit; }
+
+  a {
+    display: block;
+    border-left: 2px solid $border-color;
+    padding: 0.4em 0.65em;
+    color: $text-color;
+    line-height: 1.45;
+    text-decoration: none;
+    overflow-wrap: break-word;
+    font-size: $type-size-6;
+
+    &.is-past { color: mix(#fff, $text-color, 30%); }
+
+    &:hover, &:focus-visible { text-decoration: underline; }
+
+    &[aria-current="location"] {
+      border-left-color: $link-color;
+      color: $link-color;
+      font-weight: bold;
+      background: rgba($link-color, 0.06);
+    }
+  }
+
+  @include breakpoint($large) {
+    position: sticky;
+    top: 2em;
+
+    summary { display: none; }
+    summary::-webkit-details-marker { display: none; }
+    nav {
+      max-height: calc(100vh - 8em);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+  }
+}
+
+.page__content h2, .page__content h3, .archive__subtitle {
+  scroll-margin-top: 2em;
+}

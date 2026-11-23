@@ -2,3 +2,7 @@
 
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}
+
+{% if page.collection == 'posts' or page.url == '/blog/' %}
+<script src="{{ base_path }}/assets/js/blog-contents.js" defer></script>
+{% endif %}

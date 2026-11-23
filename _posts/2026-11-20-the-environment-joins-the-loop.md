@@ -10,6 +10,7 @@ tags:
 comments: false
 share: false
 related: false
+contents_intro: Introduction
 ---
 
 Imagine getting stuck on a hard math problem. A mentor suggests several problems that isolate steps you are missing, which you solve.
