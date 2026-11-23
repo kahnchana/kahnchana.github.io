@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A practice world for a delicate task</title>
+<style>
+:root{--ink:#1b302d;--muted:#5d6e67;--line:#dce3dc;--paper:#fafaf7;--accent:#bd613e}*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--paper);color:var(--ink);font:15px/1.5 system-ui,-apple-system,sans-serif}.wrap{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(290px,.9fr);height:100%}.stage{position:relative;min-width:0;min-height:0;background:#142b29}canvas{display:block;position:absolute;inset:0;width:100%;height:100%}.hud{position:absolute;top:16px;left:16px;right:16px;color:#f8f1d9;pointer-events:none;text-shadow:0 1px 4px #10201e}.hud .tag{font:12px/1.4 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.12em;color:#a9c8bd}.hud h2{font-size:22px;line-height:1.2;margin:7px 0}.hud p{max-width:390px;margin:0;font-size:14px;color:#c5d7cd}.legend{position:absolute;bottom:16px;left:16px;right:16px;display:flex;gap:8px;flex-wrap:wrap;color:#dcebe2;font:13px/1.4 ui-monospace,monospace}.legend span{border:1px solid #7a9b8c66;background:#17332fe8;border-radius:5px;padding:6px 8px}.legend b{color:#f1ca64}aside{overflow:auto;border-left:1px solid var(--line);padding:21px 21px 16px;min-height:0}h1{font:600 22px/1.2 Georgia,serif;margin:0 0 9px}p{font-size:14px;color:var(--muted);margin:0 0 17px}.control{margin:17px 0}label{font-size:14px;display:flex;align-items:center;justify-content:space-between;gap:10px}output{font:14px ui-monospace,monospace;color:var(--accent)}input[type=range]{width:100%;margin:10px 0 0;accent-color:var(--accent)}input[type=checkbox]{accent-color:var(--accent);width:18px;height:18px}.toggle{justify-content:flex-start;margin:18px 0}.buttons{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0}button{background:white;border:1px solid #b8c7bd;border-radius:999px;padding:8px 12px;color:var(--ink);font:14px system-ui;cursor:pointer}button:hover{border-color:var(--accent);color:var(--accent)}button:focus-visible,input:focus-visible{outline:3px solid #db9b65;outline-offset:3px}.status{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px 0;margin:14px 0}.status strong{display:block;font-size:15px}.status p{margin:4px 0 0;font-size:14px}pre{font:12px/1.7 ui-monospace,monospace;white-space:pre-wrap;color:#58766a;margin:15px 0}.note{font-size:12px;margin:13px 0 0;color:#6c7a72}button.active{background:#fff1e5;border-color:var(--accent)}@media(max-width:720px){.wrap{grid-template-columns:1fr;grid-template-rows:300px minmax(0,1fr)}aside{border-left:0;border-top:1px solid var(--line);padding:18px}.hud h2{font-size:19px}.hud p{max-width:300px;font-size:13px}.legend{bottom:10px;left:12px;gap:5px}.legend span{font-size:11px;padding:4px 6px}.control{margin:12px 0}.buttons{margin:12px 0}}@media(prefers-reduced-motion:reduce){.hud::after{content:'Starts paused for reduced motion';display:block;font-size:12px;margin-top:8px;color:#c5d7cd}}
+</style>
+</head>
+<body><main class="wrap">
+<section class="stage" aria-label="Animated robotic banana peeling"><canvas id="view"></canvas><div class="hud"><div class="tag">Editable practice world</div><h2 id="phase">Two hands, one delicate task</h2><p id="message">Support the fruit while pulling the peel.</p></div><div class="legend"><span>grip <b id="gripMetric">0.50</b></span><span>compression <b id="compressionMetric">0%</b></span><span>peel <b id="peelMetric">0%</b></span></div></section>
+<aside><h1>A world that pushes back</h1><p>Change the fruit and the grip. Can the same control rule peel it without slipping or squeezing too hard?</p>
+<div class="control"><label for="softness">Fruit softness <output id="softnessValue">0.55</output></label><input id="softness" type="range" min="0.1" max="1" step="0.05" value="0.55"></div>
+<div class="control"><label for="force">Grip force <output id="forceValue">0.50</output></label><input id="force" type="range" min="0.1" max="1" step="0.05" value="0.50"></div>
+<div class="control"><label for="resistance">Peel resistance <output id="resistanceValue">0.50</output></label><input id="resistance" type="range" min="0.1" max="1" step="0.05" value="0.50"></div>
+<label class="toggle" for="adaptive"><input id="adaptive" type="checkbox"> Adjust grip during the pull</label>
+<div class="buttons"><button id="pause">Pause</button><button id="replay">Replay</button><button id="shape">New shape</button><button id="reset">Reset</button></div>
+<div class="status" aria-live="polite"><strong id="outcome">Ready to peel</strong><p id="explain">A fixed grip is applied throughout the episode.</p></div>
+<pre id="source"></pre><p class="note">Scripted deformation and feedback rules. All signals are unitless and heuristic. This is not a soft-body physics simulation, a learned policy, or evidence of real-world performance. Parameter changes restart the episode.</p>
+</aside></main>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.1/build/three.module.js"}}</script>
+<script type="module">
+let THREE;
+try{THREE=await import('three')}catch(error){document.querySelector('#phase').textContent='3D library unavailable';document.querySelector('#message').textContent='This demo needs access to unpkg.com. Reload when connected.';document.querySelector('#outcome').textContent='Unable to load the demo';throw error}
+const $=id=>document.getElementById(id),clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),ease=x=>{x=clamp(x);return x*x*(3-2*x)};
+const canvas=$('view');let renderer;try{renderer=new THREE.WebGLRenderer({canvas,antialias:true})}catch(error){$('phase').textContent='WebGL is unavailable';$('message').textContent='Try a browser with 3D graphics enabled.';throw error}
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.12;
+const scene=new THREE.Scene();scene.background=new THREE.Color('#142b29');scene.fog=new THREE.Fog('#142b29',10,20);
+const camera=new THREE.PerspectiveCamera(35,1,.1,35);camera.position.set(5.5,3.5,7.7);camera.lookAt(.15,1.9,0);
+scene.add(new THREE.HemisphereLight('#fff4dc','#233b35',1.6));const key=new THREE.DirectionalLight('#fff5df',3.1);key.position.set(2,7,5);key.castShadow=true;key.shadow.mapSize.set(2048,2048);key.shadow.normalBias=.025;key.shadow.bias=-.00015;scene.add(key);const rim=new THREE.DirectionalLight('#92c5b7',1.3);rim.position.set(-5,3,-2);scene.add(rim);
+const mat=(color,roughness=.7,metalness=0)=>new THREE.MeshStandardMaterial({color,roughness,metalness});
+// Procedural color and microrelief textures, generated locally (no image assets).
+function fruitTextures(kind){
+ const c=document.createElement('canvas');c.width=512;c.height=1024;const q=c.getContext('2d');
+ const height=document.createElement('canvas');height.width=512;height.height=1024;const h=height.getContext('2d');
+ let seed=kind==='outer'?7281:kind==='inner'?842:914;const rand=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296};
+ const g=q.createLinearGradient(0,0,512,0);
+ if(kind==='outer'){g.addColorStop(0,'#b5a33c');g.addColorStop(.25,'#e2c740');g.addColorStop(.52,'#f1d351');g.addColorStop(.8,'#d6bb39');g.addColorStop(1,'#c0aa35')}
+ else if(kind==='inner'){g.addColorStop(0,'#ccbd82');g.addColorStop(.4,'#e4d8ac');g.addColorStop(.7,'#eee2bc');g.addColorStop(1,'#cebf88')}
+ else {g.addColorStop(0,'#e7dbb4');g.addColorStop(.45,'#f4e8c9');g.addColorStop(1,'#e7d9b2')}
+ q.fillStyle=g;q.fillRect(0,0,512,1024);h.fillStyle='#808080';h.fillRect(0,0,512,1024);
+ for(let i=0;i<6500;i++){let x=rand()*512,y=rand()*1024,a=rand(),r=rand()*1.5+.3;q.fillStyle=kind==='outer'?`rgba(105,76,29,${a*.14})`:`rgba(139,115,66,${a*.07})`;q.beginPath();q.ellipse(x,y,r,r*(kind==='outer'?1:2.5),0,0,Math.PI*2);q.fill();h.fillStyle=`rgba(0,0,0,${a*.08})`;h.fillRect(x,y,1,2)}
+ for(let i=0;i<(kind==='outer'?75:270);i++){let x=rand()*512,y=rand()*900,len=60+rand()*450;q.strokeStyle=kind==='outer'?`rgba(133,112,32,${.04+rand()*.08})`:`rgba(255,250,222,${.08+rand()*.2})`;q.lineWidth=kind==='outer'?.7:rand()*1.2+.3;q.beginPath();q.moveTo(x,y);q.bezierCurveTo(x+2,y+len*.3,x-2,y+len*.7,x+rand()*4-2,y+len);q.stroke();h.strokeStyle='rgba(230,230,230,.17)';h.lineWidth=.7;h.beginPath();h.moveTo(x,y);h.lineTo(x+2,y+len);h.stroke()}
+ if(kind==='outer'){
+  for(let i=0;i<155;i++){let x=rand()*512,y=rand()*1024,r=.6+Math.pow(rand(),4)*4.5;q.fillStyle=`rgba(84,59,27,${.15+rand()*.3})`;q.beginPath();q.ellipse(x,y,r,r*(1+rand()),rand(),0,Math.PI*2);q.fill()}
+  const tip=q.createLinearGradient(0,0,0,1024);tip.addColorStop(0,'rgba(98,88,35,.6)');tip.addColorStop(.06,'rgba(129,133,44,.18)');tip.addColorStop(.18,'rgba(129,133,44,0)');tip.addColorStop(.88,'rgba(122,116,33,0)');tip.addColorStop(.97,'rgba(111,97,35,.3)');tip.addColorStop(1,'rgba(84,63,28,.7)');q.fillStyle=tip;q.fillRect(0,0,512,1024);
+ }
+ const map=new THREE.CanvasTexture(c),bump=new THREE.CanvasTexture(height);map.colorSpace=THREE.SRGBColorSpace;map.anisotropy=bump.anisotropy=renderer.capabilities.getMaxAnisotropy();return{map,bumpMap:bump};
+}
+const skinTexture=fruitTextures('outer'),innerTexture=fruitTextures('inner'),pulpTexture=fruitTextures('flesh');
+const teal=mat('#4c8f82',.35,.45),coral=mat('#d58058',.35,.4),steel=mat('#b2c5bc',.25,.65),joint=mat('#213e39'),rubber=mat('#26352e');
+const fleshMat=new THREE.MeshPhysicalMaterial({color:'#fff8df',...pulpTexture,roughness:.48,bumpScale:.006,clearcoat:.08,clearcoatRoughness:.65});
+const peelMat=new THREE.MeshPhysicalMaterial({color:'#fff4c4',...skinTexture,roughness:.57,bumpScale:.008,clearcoat:.16,clearcoatRoughness:.6,side:THREE.FrontSide});
+const innerMat=new THREE.MeshStandardMaterial({color:'#fff7dd',...innerTexture,roughness:.9,bumpScale:.012,side:THREE.BackSide});
+const edgeMat=new THREE.MeshStandardMaterial({color:'#c7b985',roughness:.85,side:THREE.DoubleSide});
+function mesh(geo,m,parent=scene){const q=new THREE.Mesh(geo,m);q.castShadow=true;q.receiveShadow=true;parent.add(q);return q}
+function box(w,h,d,m,x,y,z,parent=scene){const q=mesh(new THREE.BoxGeometry(w,h,d),m,parent);q.position.set(x,y,z);return q}
+const table=box(7,.12,4.6,mat('#284a42'),0,.18,0);const inset=box(3.3,.02,2.7,mat('#356056'),0,.25,0);const grid=new THREE.GridHelper(6,24,'#6a8f7b','#3c6254');grid.position.y=.247;scene.add(grid);
+const fruit=new THREE.Group();scene.add(fruit);
+let bend=.46,fruitRotation=-.09,episode=0,last=0,paused=matchMedia('(prefers-reduced-motion: reduce)').matches;let snapshot={};$('pause').textContent=paused?'Resume':'Pause';
+const N=96,M=60;
+function center(t){return new THREE.Vector3(bend*Math.sin(t*Math.PI)-.16,1.05+t*2.65,.07*Math.sin(t*3.2))}
+function radius(t){return .25*Math.pow(Math.max(0,Math.sin(Math.PI*t)),.4)+.016}
+function makeSurface(rows,cols){const g=new THREE.BufferGeometry(),pos=new Float32Array((rows+1)*(cols+1)*3),uv=new Float32Array((rows+1)*(cols+1)*2),indices=[];for(let i=0;i<=rows;i++)for(let j=0;j<=cols;j++){const v=i*(cols+1)+j;uv[v*2]=j/cols;uv[v*2+1]=i/rows;if(i<rows&&j<cols){const a=v,b=a+cols+1;indices.push(a,b,a+1,b,b+1,a+1)}}g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('uv',new THREE.BufferAttribute(uv,2));g.setIndex(indices);return g}
+const flesh=mesh(makeSurface(N,M),fleshMat,fruit),peels=[];const PR=96,PC=20;
+for(let strip=0;strip<3;strip++){
+ const outer=mesh(makeSurface(PR,PC),peelMat,fruit),inner=mesh(makeSurface(PR,PC),innerMat,fruit);
+ const edges=[mesh(makeSurface(PR,1),edgeMat,fruit),mesh(makeSurface(PR,1),edgeMat,fruit)];
+ peels.push({outer,inner,edges});
+}
+// Fine, pale longitudinal fibers appear along the opened strip, rather than stretching into a fan.
+const fibers=[];for(let k=0;k<7;k++){const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(new Float32Array(46*3),3));const line=new THREE.Line(g,new THREE.LineBasicMaterial({color:'#efe2b3',transparent:true,opacity:.58}));fruit.add(line);fibers.push(line)}
+const bottom=mesh(new THREE.SphereGeometry(.06,12,8),mat('#756341'),fruit);bottom.position.copy(center(.005));
+const stem=mesh(new THREE.CylinderGeometry(.035,.05,.18,10),mat('#756341'),fruit);
+const bruises=[];for(let i=0;i<5;i++){const q=mesh(new THREE.SphereGeometry(.075,12,8),mat('#8d6438'),fruit);q.scale.z=.16;bruises.push(q)}
+function link(m){return mesh(new THREE.CylinderGeometry(.105,.135,1,14),m)}
+function positionLink(q,a,b){q.position.copy(a).add(b).multiplyScalar(.5);const d=b.clone().sub(a);q.scale.y=d.length();q.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize())}
+function robot(side,m){const base=box(.7,.25,.7,joint,side*2.5,.41,-.1);const shoulder=mesh(new THREE.SphereGeometry(.21,16,12),m);shoulder.position.set(side*2.5,.58,-.1);const elbow=mesh(new THREE.SphereGeometry(.17,16,12),steel);const wrist=mesh(new THREE.SphereGeometry(.12,12,10),m);const gripper=new THREE.Group();scene.add(gripper);box(.25,.24,.5,m,0,0,0,gripper);const fingers=[];for(const z of [-1,1]){const finger=box(.13,.38,.13,steel,.19,0,z*.22,gripper);const pad=box(.05,.23,.16,rubber,.28,0,z*.22,gripper);fingers.push({finger,pad,z})}return {side,m,shoulder,elbow,wrist,gripper,fingers,a:link(m),b:link(m)}}
+const holding=robot(-1,teal),pulling=robot(1,coral);
+function moveRobot(r,target,opening,time){const elbow=new THREE.Vector3(r.side*1.6,1.95+Math.sin(time*.4)*.04,-.5);r.elbow.position.copy(elbow);r.wrist.position.copy(target);positionLink(r.a,r.shoulder.position,elbow);positionLink(r.b,elbow,target);r.gripper.position.copy(target);r.gripper.rotation.y=r.side<0?0:Math.PI;r.fingers.forEach(({finger,pad,z})=>{finger.position.z=z*opening;pad.position.z=z*opening});}
+function deform(t,theta,compression){const c=center(t),r=radius(t)*(1+.035*Math.cos(theta*5)),local=Math.exp(-Math.pow((t-.38)/.17,2));return new THREE.Vector3(c.x+Math.cos(theta)*r*(1+compression*local*.25),c.y,c.z+Math.sin(theta)*r*(1-compression*local));}
+// Arc-length ribbon: the moving separation front is a smooth U bend. The
+// detached skin retains its width and length, and hangs under its own weight.
+function peelPoint(t,theta,progress,compression,layer=1){
+ const cut=1-progress*.86,thick=.024;
+ if(t<=cut||progress===0){return deform(t,theta,compression).add(new THREE.Vector3(Math.cos(theta),0,Math.sin(theta)).multiplyScalar(.009+layer*thick));}
+ const root=deform(cut,0,compression),d=(t-cut)*2.74;
+ const R=.42+.045*progress,arc=Math.min(d,Math.PI*R),a=arc/R,tail=Math.max(0,d-Math.PI*R);
+ const outward=R*(1-Math.cos(a))+.045*tail*tail;
+ const vertical=R*Math.sin(a)-tail;
+ const flatten=1-Math.exp(-d/.2),phi=theta,r=radius(t);
+ const z=THREE.MathUtils.lerp(Math.sin(phi)*r,phi*r,flatten);
+ const cup=(Math.cos(phi)-1)*r*(1-flatten*.83);
+ const wrinkle=.004*Math.sin(t*83+theta*7)*Math.sin(phi*3)*flatten;
+ const normal=new THREE.Vector3(Math.cos(a),-Math.sin(a),0);
+ return root.add(new THREE.Vector3(outward,vertical,z)).addScaledVector(normal,cup+.009+layer*thick+wrinkle);
+}
+function writeVertex(attr,i,v){attr.setXYZ(i,v.x,v.y,v.z)}
+let outcomeText='';
+function read(){return {softness:Number($('softness').value),force:Number($('force').value),resistance:Number($('resistance').value),adaptive:$('adaptive').checked}}
+function restart(){episode=0;outcomeText='';for(const id of ['softness','force','resistance'])$(id+'Value').value=Number($(id).value).toFixed(2);const cfg=read();$('source').textContent=`// editable, heuristic practice conditions\nfruit.softness = ${cfg.softness.toFixed(2)}\ngrip.force = ${cfg.force.toFixed(2)}\npeel.resistance = ${cfg.resistance.toFixed(2)}\ncontroller = "${cfg.adaptive?'feedback grip':'fixed grip'}"`;}
+for(const id of ['softness','force','resistance'])$(id).oninput=restart;$('adaptive').onchange=restart;
+$('pause').onclick=()=>{paused=!paused;$('pause').textContent=paused?'Resume':'Pause'};$('replay').onclick=restart;
+$('shape').onclick=()=>{bend=.28+Math.random()*.5;fruitRotation=-.18+Math.random()*.3;restart()};
+$('reset').onclick=()=>{$('softness').value=.55;$('force').value=.5;$('resistance').value=.5;$('adaptive').checked=false;bend=.46;fruitRotation=-.09;restart()};
+function draw(){const cfg=read(),e=episode;const pull=ease((e-2.1)/6.8),load=.24+cfg.resistance*.44*pull;const force=cfg.adaptive?clamp(.18+cfg.resistance*.4*pull,.1,1):cfg.force;const damage=Math.max(0,(force*cfg.softness-.39)/.38),slip=Math.max(0,(load-force-.04)/.35);const compression=clamp(force*cfg.softness*.8,0,.65);const failSlip=slip>.22,failDamage=damage>.13;const slipWeight=ease((slip-.12)/.28),drop=ease((e-5)/2)*.65*slipWeight;const maxPull=cfg.adaptive?1:clamp((force+.04+.35*.22-.24)/(cfg.resistance*.44));const progress=Math.min(pull,maxPull);
+fruit.position.y=-drop;fruit.rotation.z=fruitRotation+(failSlip?ease((e-5)/2)*.17:0);
+const arr=flesh.geometry.attributes.position;for(let i=0;i<=N;i++)for(let j=0;j<=M;j++)writeVertex(arr,i*(M+1)+j,deform(i/N,j/M*Math.PI*2,compression));arr.needsUpdate=true;flesh.geometry.computeVertexNormals();
+// The right gripper holds strip 0. The remaining strips stay on the fruit;
+// they may follow its compression or slip, but never peel themselves.
+const activePeelProgress=progress;
+const peelProgress=peels.map((_,k)=>k===0?activePeelProgress:0);
+for(let k=0;k<3;k++){
+ const local=peelProgress[k],p=peels[k];
+ for(const [q,layer] of [[p.outer,1],[p.inner,0]]){const a=q.geometry.attributes.position;for(let i=0;i<=PR;i++)for(let j=0;j<=PC;j++){const theta=k*2*Math.PI/3+(j/PC-.5)*2*Math.PI/3;writeVertex(a,i*(PC+1)+j,peelPoint(i/PR,theta,local,compression,layer))}a.needsUpdate=true;q.geometry.computeVertexNormals()}
+ p.edges.forEach((q,edge)=>{const a=q.geometry.attributes.position,theta=k*2*Math.PI/3+(edge-.5)*2*Math.PI/3;for(let i=0;i<=PR;i++)for(let j=0;j<=1;j++)writeVertex(a,i*2+j,peelPoint(i/PR,theta,local,compression,j));a.needsUpdate=true;q.geometry.computeVertexNormals()});
+}
+const cut=1-activePeelProgress*.86;
+fibers.forEach((line,k)=>{line.visible=activePeelProgress>.02;const a=line.geometry.attributes.position;for(let i=0;i<46;i++){const t=cut+(1-cut)*(i/45),theta=(k-3)*.18;let pt=peelPoint(t,theta,activePeelProgress,compression,0);const d=(t-cut)*2.74,A=Math.min(d/(.42+.045*activePeelProgress),Math.PI);pt.addScaledVector(new THREE.Vector3(Math.cos(A),-Math.sin(A),0),-.003);writeVertex(a,i,pt)}a.needsUpdate=true});
+stem.position.copy(peelPoint(1,0,activePeelProgress,compression));const stemTangent=peelPoint(1,0,activePeelProgress,compression).sub(peelPoint(.995,0,activePeelProgress,compression)).normalize();stem.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),stemTangent);stem.position.addScaledVector(stemTangent,.07);
+bruises.forEach((q,i)=>{const theta=-Math.PI/2+(i-2)*.17;q.visible=failDamage&&e>3;q.position.copy(deform(.3+i*.035,theta,compression));q.position.z-=.015;q.scale.set(.5+damage,.6+damage,.1)});
+fruit.updateMatrixWorld();const hold=fruit.localToWorld(deform(.38,Math.PI,compression));hold.x-=.14;const tip=fruit.localToWorld(peelPoint(1,0,activePeelProgress,compression));tip.x+=.19;moveRobot(holding,hold,.2-compression*.08,e);moveRobot(pulling,tip,.055,e);
+let phase=e<2.1?'Support and pinch':e<8.9?'Peel while supporting':'Inspect the result';let result=e<2.1?'Ready to peel':failSlip&&e>5?'Grip slipped':failDamage&&e>3?'Fruit compressed too much':e>8.9?'Peel completed':'Pull in progress';let explanation=cfg.adaptive?'Grip follows a simple load estimate. This rule can still fail on very soft fruit.':'A fixed grip is applied throughout the episode.';if(failSlip&&e>5)explanation='This grip is below the toy holding threshold. Try more force or feedback.';else if(failDamage&&e>3)explanation='This grip exceeds the toy damage threshold. Try less force or softer feedback.';else if(e>8.9)explanation='No slip or damage threshold was crossed in this toy trial.';
+$('phase').textContent=phase;$('message').textContent=cfg.adaptive?'Feedback grip adjusts as the peel load grows.':'Fixed grip: the same force throughout the pull.';$('gripMetric').textContent=force.toFixed(2);$('compressionMetric').textContent=Math.round(compression*100)+'%';$('peelMetric').textContent=Math.round(progress*100)+'%';if(outcomeText!==result+explanation){$('outcome').textContent=result;$('explain').textContent=explanation;outcomeText=result+explanation;}
+snapshot={...cfg,episode:e,force,compression,slip,damage,result,separation:cut,peelTip:tip.toArray(),activePeel:0,peelProgress:[...peelProgress],attachedPeels:[1,2]};}
+function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;if(Math.abs(canvas.width/renderer.getPixelRatio()-w)>1||Math.abs(canvas.height/renderer.getPixelRatio()-h)>1){renderer.setSize(w,h,false);camera.aspect=w/Math.max(h,1);camera.updateProjectionMatrix()}}
+function frame(now){const dt=last?Math.min((now-last)/1000,.05):0;last=now;if(!paused)episode=(episode+dt)%13;resize();draw();renderer.render(scene,camera);requestAnimationFrame(frame)}
+const previewParams=new URLSearchParams(location.search);for(const name of ['softness','force','resistance'])if(previewParams.has(name))$(name).value=clamp(Number(previewParams.get(name)),.1,1);if(previewParams.has('adaptive'))$('adaptive').checked=previewParams.get('adaptive')==='1';if(previewParams.has('time')){episode=clamp(Number(previewParams.get('time')),0,12.99);paused=true;$('pause').textContent='Resume';}restart();if(previewParams.has('time'))episode=clamp(Number(previewParams.get('time')),0,12.99);requestAnimationFrame(frame);
+// Read-only diagnostics for verification; no learned model is involved.
+window.practiceDemo={getState:()=>({...snapshot}),seek:seconds=>{episode=clamp(seconds,0,12.99);draw()}};
+</script></body></html>

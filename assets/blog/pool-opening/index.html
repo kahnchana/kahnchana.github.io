@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imagine the shot</title>
+<style>
+:root{color-scheme:light;--cream:#f5f2ea;--ink:#192d2b;--teal:#24796e;--orange:#d96339}*{box-sizing:border-box}html,body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:1100px;margin:auto;padding:20px 24px 14px}header{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:5px}h2{font-size:24px;letter-spacing:-.6px;margin:0;font-weight:680}.eyebrow{font-size:11px;letter-spacing:1.2px;font-weight:700;color:var(--teal);text-transform:uppercase}p{margin:6px 0;color:#526960;font-size:13px;line-height:1.5}.table-wrap{position:relative;margin:8px -5px 2px}canvas{width:100%;height:auto;display:block;aspect-ratio:1000/455;touch-action:none;cursor:crosshair;border-radius:12px}.controls{display:flex;align-items:center;gap:15px;margin-top:3px}.aim{display:flex;align-items:center;gap:10px;flex:1;min-width:80px;font-size:12px;font-weight:650}.aim input{width:100%;min-width:40px;accent-color:var(--teal);cursor:pointer}.buttons{display:flex;gap:8px}.players{display:flex;gap:18px;flex-wrap:wrap;font-size:11px;color:#526960;margin:7px 0}.players b{color:var(--ink)}button{font-family:inherit;font-size:13px;font-weight:600;white-space:nowrap;padding:10px 18px;border-radius:6px;border:1px solid #b9c9c0;background:transparent;color:var(--ink);cursor:pointer}button.primary{background:var(--teal);border-color:var(--teal);color:white}button:hover{filter:brightness(.94)}button:focus-visible,input:focus-visible{outline:3px solid #d96339;outline-offset:3px}button:disabled{opacity:.5;cursor:default}.status{min-height:20px;font-size:12px;color:var(--teal);margin-top:9px}.note{font-size:10px;color:#718079;margin-top:3px}.legend{font-size:11px;color:#526960;display:flex;gap:15px;align-items:center;margin-top:-3px}.legend span{display:flex;align-items:center;gap:5px}.line{width:17px;height:0;border-top:2px solid var(--orange)}.line.cue{border-color:#8eaaa0}.line.other{border-color:#8eaaa0;border-top-style:dashed;opacity:.6}@media(max-width:500px){main{padding:16px 12px 12px}header{display:block}h2{font-size:22px;margin:4px 0}.eyebrow{font-size:10px}p{font-size:12px}.controls{flex-wrap:wrap;gap:10px}.aim{flex-basis:100%;padding:0 3px}.buttons{width:100%}button{flex:1;padding:10px 12px}.legend{font-size:10px;gap:11px}.status{font-size:11px;min-height:32px}.note{font-size:9px}}
+</style>
+</head>
+<body><main>
+<header><h2>Imagine the shot.</h2><span class="eyebrow">Try possibilities before acting</span></header>
+<p>You’re playing solids. Read the traffic, compare possible shots, then take one.</p>
+<div class="players"><span><b>You</b> · Solids <span id="solids-count">5</span></span><span><b>Opponent</b> · Stripes <span id="stripes-count">5</span></span><span>8 ball remains in play</span></div>
+<div class="table-wrap"><canvas id="table" width="1000" height="455" role="img" aria-label="Interactive pool table. Adjust the aim slider to preview trajectories among solids and stripes, then select Take the shot."></canvas></div>
+<div class="legend" aria-hidden="true"><span><i class="line cue"></i>Cue ball</span><span><i class="line"></i>Object balls</span><span><i class="line other"></i>Nearby alternatives</span></div>
+<div class="controls"><label class="aim" for="aim">Aim <input id="aim" type="range" min="-45" max="5" value="-16.68" step="0.1" aria-label="Shot angle in degrees"></label><div class="buttons"><button id="shoot" class="primary">Take the shot</button><button id="reset">Reset shot</button><button id="layout">New table</button></div></div>
+<div class="status" id="status" role="status" aria-live="polite">One situation, three possible shots. The brighter paths show your current choice.</div>
+<p class="note">Illustrative simulation with simplified collisions and friction. No learned agent runs here.</p>
+</main>
+<script>
+(()=>{'use strict';
+const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d'),slider=document.querySelector('#aim'),shoot=document.querySelector('#shoot'),reset=document.querySelector('#reset'),status=document.querySelector('#status');
+const W=1000,H=455,R=13,L=68,T=57,RIGHT=932,BOTTOM=398;
+const pockets=[[L,T],[500,T],[RIGHT,T],[L,BOTTOM],[500,BOTTOM],[RIGHT,BOTTOM]];
+function makeBall(x,y,number){return {x,y,number,vx:0,vy:0,potted:false}}
+function distanceToSegment(x,y,a,b){let dx=b.x-a.x,dy=b.y-a.y,t=Math.max(0,Math.min(1,((x-a.x)*dx+(y-a.y)*dy)/(dx*dx+dy*dy)));return Math.hypot(x-a.x-t*dx,y-a.y-t*dy)}
+function makeLayout(){const result=[makeBall(320,310,0),makeBall(640,210,3)];
+for(const number of [1,2,4,6,9,10,11,12,14,8]){for(let tries=0;tries<3000;tries++){let x=100+Math.random()*800,y=95+Math.random()*265;
+if(result.some(b=>Math.hypot(x-b.x,y-b.y)<58))continue;
+// Leave one readable opening shot, while the scattered balls complicate other routes.
+if(distanceToSegment(x,y,result[0],result[1])<38||distanceToSegment(x,y,result[1],{x:RIGHT,y:T})<38)continue;
+result.push(makeBall(x,y,number));break;}}
+return result;}
+let initial=makeLayout();
+let balls=clone(initial),angle=-16.68,playing=false,ready=true,last=0,accum=0,paths=[],time=0,shotFrames=0,animation=0;
+let visible=true;new IntersectionObserver(entries=>{visible=entries[0].isIntersecting},{threshold:0}).observe(canvas);
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+function clone(a){return a.map(b=>({...b}))}
+function advance(bs){for(let b of bs){if(b.potted)continue;b.x+=b.vx;b.y+=b.vy;for(let p of pockets){if(Math.hypot(b.x-p[0],b.y-p[1])<22){b.potted=true;b.vx=b.vy=0;break}}if(b.potted)continue;if(b.x<L+R){b.x=L+R;b.vx=Math.abs(b.vx)*.88}if(b.x>RIGHT-R){b.x=RIGHT-R;b.vx=-Math.abs(b.vx)*.88}if(b.y<T+R){b.y=T+R;b.vy=Math.abs(b.vy)*.88}if(b.y>BOTTOM-R){b.y=BOTTOM-R;b.vy=-Math.abs(b.vy)*.88}b.vx*=.989;b.vy*=.989;if(Math.hypot(b.vx,b.vy)<.035)b.vx=b.vy=0}
+for(let i=0;i<bs.length;i++)for(let j=i+1;j<bs.length;j++){let a=bs[i],b=bs[j];if(!a.potted&&!b.potted){let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy);if(d<2*R&&d>0){let nx=dx/d,ny=dy/d,over=(2*R-d)/2;a.x-=nx*over;a.y-=ny*over;b.x+=nx*over;b.y+=ny*over;let impulse=(a.vx-b.vx)*nx+(a.vy-b.vy)*ny;if(impulse>0){a.vx-=impulse*nx;a.vy-=impulse*ny;b.vx+=impulse*nx;b.vy+=impulse*ny}}}}}
+function launch(a){let bs=clone(initial),rad=a*Math.PI/180;bs[0].vx=Math.cos(rad)*10;bs[0].vy=Math.sin(rad)*10;return bs}
+function simulate(a){let bs=launch(a),traces=bs.map(()=>[]);for(let n=0;n<650;n++){if(n%3===0)bs.forEach((b,i)=>{if(!b.potted)traces[i].push([b.x,b.y])});advance(bs)}return {traces,bs}}
+function preview(){paths=[simulate(angle-4),simulate(angle+4),simulate(angle)];draw()}
+function rounded(x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r)}
+function path(points,color,width,dash,alpha){if(points.length<2)return;ctx.save();ctx.strokeStyle=color;ctx.lineWidth=width;ctx.globalAlpha=alpha;ctx.setLineDash(dash);ctx.lineCap='round';ctx.lineJoin='round';ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.stroke();ctx.restore()}
+const ballColors={1:'#e8b52a',2:'#3079b7',3:'#db633e',4:'#8450aa',5:'#df8134',6:'#2a8663',7:'#a63c47',8:'#242936'};
+function ball(b,i,alpha=1){if(b.potted)return;ctx.save();ctx.globalAlpha=alpha;ctx.shadowColor='#061c1a88';ctx.shadowBlur=9;ctx.shadowOffsetY=4;
+const color=b.number===0?'#f5f4e9':ballColors[b.number>8?b.number-8:b.number];
+ctx.beginPath();ctx.arc(b.x,b.y,R,0,Math.PI*2);ctx.fillStyle=b.number>8?'#f3f2e7':color;ctx.fill();ctx.shadowColor='transparent';
+ctx.save();ctx.beginPath();ctx.arc(b.x,b.y,R,0,Math.PI*2);ctx.clip();if(b.number>8){ctx.fillStyle=color;ctx.fillRect(b.x-R,b.y-7,2*R,14)}
+let shine=ctx.createRadialGradient(b.x-5,b.y-6,0,b.x,b.y,R+2);shine.addColorStop(0,'#ffffff88');shine.addColorStop(.45,'#ffffff08');shine.addColorStop(1,'#00000055');ctx.fillStyle=shine;ctx.fillRect(b.x-R,b.y-R,2*R,2*R);ctx.restore();
+if(b.number){ctx.fillStyle='#faf7e9';ctx.beginPath();ctx.arc(b.x,b.y,5.5,0,Math.PI*2);ctx.fill();ctx.fillStyle='#24332e';ctx.font='bold 7px system-ui';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(b.number),b.x,b.y+.4)}ctx.restore()}
+function updateCounts(){document.querySelector('#solids-count').textContent=balls.filter(b=>b.number>0&&b.number<8&&!b.potted).length;document.querySelector('#stripes-count').textContent=balls.filter(b=>b.number>8&&!b.potted).length}
+function draw(){ctx.clearRect(0,0,W,H);ctx.save();ctx.shadowColor='#192d2b22';ctx.shadowBlur=18;ctx.shadowOffsetY=8;rounded(36,23,928,413,28);ctx.fillStyle='#27463e';ctx.fill();ctx.restore();let wood=ctx.createLinearGradient(0,23,0,436);wood.addColorStop(0,'#547266');wood.addColorStop(.5,'#2c4b41');wood.addColorStop(1,'#1b352d');rounded(38,25,924,408,26);ctx.fillStyle=wood;ctx.fill();rounded(53,42,894,373,18);ctx.fillStyle='#1a5348';ctx.fill();let felt=ctx.createRadialGradient(470,180,50,500,230,520);felt.addColorStop(0,'#348b78');felt.addColorStop(1,'#21685b');rounded(L,T,RIGHT-L,BOTTOM-T,11);ctx.fillStyle=felt;ctx.fill();ctx.strokeStyle='#133f3699';ctx.lineWidth=4;ctx.stroke();
+// Quiet rail markers and pocket lips.
+ctx.fillStyle='#b4c7b366';for(let x of [180,290,710,820])for(let y of [34,423]){ctx.beginPath();ctx.arc(x,y,2,0,7);ctx.fill()}for(let [x,y] of pockets){ctx.beginPath();ctx.arc(x,y,24,0,Math.PI*2);ctx.fillStyle='#54715b';ctx.fill();ctx.beginPath();ctx.arc(x,y,19,0,Math.PI*2);ctx.fillStyle='#0a2420';ctx.fill();}
+// The target pocket remains subtle, but gives this small scene a purpose.
+ctx.save();ctx.strokeStyle='#eea06e';ctx.lineWidth=2;ctx.setLineDash([3,4]);ctx.beginPath();ctx.arc(RIGHT,T,29,0,Math.PI*2);ctx.stroke();ctx.restore();
+if(ready){for(let k=0;k<2;k++)for(let i=0;i<initial.length;i++)path(paths[k]?.traces[i]||[],i?'#ffc296':'#d3e4d7',1.8,[4,8],.27);if(paths[2]){path(paths[2].traces[0],'#e5efe0',2.5,[7,6],.65);for(let i=1;i<initial.length;i++)path(paths[2].traces[i],'#ffad78',2.5,[],.85)}
+// Cue aligns to the selected action, while previews show its possible consequences.
+let rad=angle*Math.PI/180;ctx.save();ctx.translate(initial[0].x,initial[0].y);ctx.rotate(rad);let cue=ctx.createLinearGradient(-160,0,-25,0);cue.addColorStop(0,'#c09b6c');cue.addColorStop(.86,'#ecdbb0');cue.addColorStop(1,'#bee2d6');ctx.strokeStyle=cue;ctx.lineWidth=6;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-165,0);ctx.lineTo(-27,0);ctx.stroke();ctx.restore();}
+updateCounts();balls.forEach((b,i)=>ball(b,i));ctx.fillStyle='#eff2dcbb';ctx.font='12px system-ui';ctx.textAlign='left';ctx.fillText('Drag on the table to aim',87,385);ctx.textAlign='right';ctx.fillStyle='#ffd3ac';ctx.fillText('Target pocket',RIGHT-36,T+7);
+}
+function finish(){playing=false;ready=false;shoot.disabled=false;slider.disabled=false;let cue=balls[0].potted,potted=balls.filter(b=>b.number&&b.potted).map(b=>b.number);status.textContent=cue?'Cue ball pocketed. Reset the shot and try another angle.':potted.length?'Pocketed: '+potted.join(', ')+'. Reset the shot or explore a new table.':'The balls have stopped. Reset the shot or try a new table.';draw();}
+function frame(t){if(!playing)return;if(document.hidden||!visible){last=t;animation=requestAnimationFrame(frame);return;}let elapsed=Math.min(50,t-last||16.67);last=t;accum+=elapsed;while(accum>=1000/120){advance(balls);shotFrames++;accum-=1000/120}draw();if(shotFrames>1300||balls.every(b=>b.potted||(!b.vx&&!b.vy))){finish();return}animation=requestAnimationFrame(frame)}
+function start(){if(playing)return;balls=launch(angle);ready=false;playing=true;shoot.disabled=true;slider.disabled=true;status.textContent='Executing the selected shot in the same simplified simulation…';if(reduce.matches){for(let i=0;i<1300;i++)advance(balls);finish();return}last=0;accum=0;shotFrames=0;animation=requestAnimationFrame(frame)}
+function resetShot(){cancelAnimationFrame(animation);playing=false;ready=true;balls=clone(initial);shoot.disabled=false;slider.disabled=false;status.textContent='Compare the predicted paths, then choose a shot. Orange paths follow the object balls.';preview()}
+slider.addEventListener('input',()=>{angle=Number(slider.value);if(!playing){ready=true;balls=clone(initial);status.textContent='Aim adjusted. The brighter paths show the current shot; faint paths show nearby alternatives.';preview()}});
+let dragging=false;function aimAt(e){if(playing)return;let rect=canvas.getBoundingClientRect(),x=(e.clientX-rect.left)*W/rect.width,y=(e.clientY-rect.top)*H/rect.height;angle=Math.max(-45,Math.min(5,Math.atan2(y-initial[0].y,x-initial[0].x)*180/Math.PI));slider.value=angle;ready=true;balls=clone(initial);status.textContent='Aim adjusted. Preview the consequences before you commit.';preview()}
+canvas.addEventListener('pointerdown',e=>{if(playing)return;dragging=true;canvas.setPointerCapture(e.pointerId);aimAt(e)});canvas.addEventListener('pointermove',e=>{if(dragging)aimAt(e)});canvas.addEventListener('pointerup',()=>dragging=false);canvas.addEventListener('pointercancel',()=>dragging=false);shoot.addEventListener('click',start);reset.addEventListener('click',resetShot);document.querySelector('#layout').addEventListener('click',()=>{initial=makeLayout();resetShot();status.textContent='New table: five solids, five stripes, and the 8 ball. Read the new routes.'});preview();
+// Expose only deterministic state for lightweight smoke checks.
+window.poolDemo={simulate,get initial(){return initial}, getState:()=>({playing,angle,balls:clone(balls)})};
+})();
+</script></body></html>

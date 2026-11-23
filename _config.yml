@@ -83,7 +83,7 @@ analytics:
 author:
   name             : "Kanchana Ranasinghe"
   avatar           : "profile.jpeg"
-  bio              : "Computer Science Enthusiast"
+  bio              : "AI Researcher"
   location         : "Stony Brook, NY, USA"
   employer         :
   pubmed           :
@@ -146,6 +146,7 @@ exclude:
   - log
   - node_modules
   - package.json
+  - personal-blog
   - tmp
   - vendor
 keep_files:
