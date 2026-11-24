@@ -50,7 +50,7 @@ We explore these ideas taking **live video assistance** and **robotic control** 
   <figcaption class="page__meta">Try possible shots before choosing one. A simplified illustration of simulation as part of thinking.</figcaption>
 </figure>
 
-## A familiar idea: try before acting
+## A familiar idea: imagine before acting
 
 Robotics and reinforcement learning have a long history of using predictive models to examine the consequences of actions and improve behavior ([Jordan and Rumelhart](https://people.eecs.berkeley.edu/~jordan/papers/distal.pdf); [Dyna](https://mlanthology.org/icml/1990/sutton1990icml-integrated/)). Works such as [Dreamer](https://openreview.net/pdf?id=S1lOTC4tDS) further demonstrate how model-generated experience can improve agent behavior.
 
