@@ -22,7 +22,18 @@ When a model fails during RL tuning, beyond updating weights, we can alter the s
 A late warning from a video assistant might motivate practice with tighter intervention windows. 
 A slipping robotic grasp might motivate cases that isolate a difficult contact condition.
 
-Recent advances in coding agents has made online *visual environment* revision viable. 
+<style>
+.definition { margin: 1.6rem 0 1.4rem; padding: 0.95rem 1.15rem 1rem; background: #f7f4ee; border: 1px solid #dedfd5; border-left: 3px solid #24796e; border-radius: 10px; }
+.definition__label { display: block; margin: 0 0 0.3rem; color: #24796e; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
+.definition p { margin: 0; }
+.definition dfn { font-style: normal; font-weight: 600; }
+</style>
+<aside class="definition">
+  <span class="definition__label">Definition</span>
+  <p><dfn>Visual Environments</dfn>: executable simulated worlds with some physical fidelity that an agent can observe and act within.</p>
+</aside>
+
+Recent advances in coding agents have made online *visual environment* revision viable. 
 Run rollouts, identify weaknesses, modify practice tasks suitably, and repeat.
 This further extends to test-time compute. 
 Constructing live executable environments and experimenting with possible actions within this digital twin is now a possibility. 
@@ -64,13 +75,12 @@ These advances motivate integrating online environment modification directly int
 
 ## The environment became easier to revise
 
-Coding agents have made editting simulators much easier while allowing extreme levels of detailed modification. 
+Coding agents have made editing simulators much easier while allowing extreme levels of detailed modification. 
 Karpathy’s [A Long-expected Party](https://karpathy.ai/lotr-movie/) illustrates how specific a generated scene can be, and especially how coding agents can perform highly detailed edits that are unrealistic for humans to perform. 
 
-
-In robotics, works like [RoboGen](https://generativesimulation.github.io/) and [RoboCasa](https://arxiv.org/abs/2406.02523) already automate parts of environment and task creation, providing foundations for the online, failure-driven revision.
+In robotics, works like [RoboGen](https://generativesimulation.github.io/) and [RoboCasa](https://arxiv.org/abs/2406.02523) already automate parts of environment and task creation, providing a foundation for online, failure-driven revision.
 Recent [Interactive Visual Gym](https://arxiv.org/abs/2611.08286) studies closed-loop assistance through executable environments and responsive simulated users for live video assistants. 
-The ability to quickly edit environments (or simulated humans within then) gives us control over the practice conditions.
+The ability to quickly edit environments (or simulated humans within them) gives us control over the practice conditions.
 
 The kitchen below illustrates a simple case of environment controls. Two animated hands prepare a burger while a rule-based assistant provides guidance. Change the ingredient order, response delay, or distraction level, and observe whether the intervention changes the outcome. 
 
@@ -201,7 +211,7 @@ We outline one possible test-time exploration for our same banana example:
 | Rehearse | Compare grip-and-pull actions across plausible material properties. | Coding agent modifies environment and executes robot policy |
 | Test and repeat | Observe and analyse the new rollouts. | Visual and environment-state based feedback used by coding agent |
 
-The infrastructure for this full automated pipline now exists. Agents can assemble, test, and revise task-specific simulations iteratively at test-time. 
+The infrastructure for this full automated pipeline now exists. Agents can assemble, test, and revise task-specific simulations iteratively at test-time. Simulation becomes part of the thinking process.
 Works like [EMPIRIC](https://arxiv.org/abs/2609.35047) provide a foundation for this direction of test-time environment modification.
 
 ## What this all means
@@ -213,4 +223,5 @@ In coding tasks, these ideas have recently proven useful even for large-scale tr
 
 The ability to similarly construct and modify *visual worlds* opens pathways to scaling up interactive visual agents. 
 Recent advances in physical AI (e.g. [Tesla FSD](https://x.com/birdabo/status/2124466600476921886?s=46)) only further support this direction.
-Leveraging editable visual worlds to scale both learning and test-time compute is a promising pathway to building truly inteligent interactive visual agents. 
+Leveraging editable visual worlds to scale both learning and test-time compute is a promising pathway to building truly intelligent interactive visual agents. 
+How soon agents could reliably turn their own failures into better practice environments in a scalable manner remains an interesting open question. 
