@@ -399,3 +399,12 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+// Keep the author credit and publication date on consecutive lines.
+.page__author {
+  margin-bottom: 0;
+
+  + .page__date {
+    margin-top: 0;
+  }
+}

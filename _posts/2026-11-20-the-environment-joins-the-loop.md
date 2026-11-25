@@ -2,6 +2,7 @@
 title: "Editable Visual Worlds Join the Loop"
 excerpt: "Code-defined environments for adaptive training and test-time reasoning."
 date: 2026-11-22
+author: Kanchana Ranasinghe
 permalink: /blog/editable-visual-worlds-join-the-loop/
 tags:
   - agents
