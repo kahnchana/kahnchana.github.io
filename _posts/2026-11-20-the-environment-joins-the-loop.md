@@ -224,4 +224,15 @@ In coding tasks, these ideas have recently proven useful even for large-scale tr
 The ability to similarly construct and modify *visual worlds* opens pathways to scaling up interactive visual agents. 
 Recent advances in physical AI (e.g. [Tesla FSD](https://x.com/birdabo/status/2124466600476921886?s=46)) only further support this direction.
 Leveraging editable visual worlds to scale both learning and test-time compute is a promising pathway to building truly intelligent interactive visual agents. 
-How soon agents could reliably turn their own failures into better practice environments in a scalable manner remains an interesting open question. 
+How soon visual agents could reliably turn their own failures into better practice environments in a scalable manner remains an interesting open question.
+
+## Selected references
+
+1. [Integrated Architectures for Learning, Planning, and Reacting Based on Approximating Dynamic Programming](https://mlanthology.org/icml/1990/sutton1990icml-integrated/).
+2. [WorldCoder, a Model-Based LLM Agent: Building World Models by Writing Code and Interacting with the Environment](https://arxiv.org/abs/2402.12275).
+3. [EnvGen: Generating and Adapting Environments via LLMs for Training Embodied Agents](https://arxiv.org/abs/2403.12014).
+4. [Eurekaverse: Environment Curriculum Generation via Large Language Models](https://arxiv.org/abs/2411.01775).
+5. [From Failures to Learnable Worlds: Policy-Conditioned Environment Generation for Navigation Agents](https://arxiv.org/abs/2610.19420).
+6. [Interactive Visual Gym: Evaluating Visual Interaction Models with Simulated Users in Interactive Worlds](https://arxiv.org/abs/2611.08286).
+7. [Twin: Playing an Unknown Game with a Test-Time Digital Twin](https://arxiv.org/abs/2608.14490).
+8. [EMPIRIC: Experiment-Driven Learning of Residual World Models for Robot Planning](https://arxiv.org/abs/2609.35047).
